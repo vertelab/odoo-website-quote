@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="pricing" inherit_id="website_quote.pricing">
+            <xpath expr="//table[@class='table wq-table']/thead/tr/th[3]" position="attributes">
+                <attribute name="class">hidden</attribute>
+            </xpath>
+            <xpath expr="//table[@class='table wq-table']/thead/tr/th[1]" position="before">
+                <th/>
+            </xpath>
+            <xpath expr="//t[@t-as='line']/tr/td[3]" position="attributes">
+                <attribute name="class">hidden</attribute>
+            </xpath>
+            <xpath expr="//t[@t-as='line']/tr/td[1]" position="before">
+                <td>
+                    <img class="img img-responsive center-block" t-att-src="'/website/image/product.product/%s/image/50x50' %line.product_id.id" style="max-height: 50px;"/>
+                </td>
+            </xpath>
+            <xpath expr="//t[@t-if='page_index == page_size - 1']/tr[2]" position="attributes">
+                <attribute name="class">hidden</attribute>
+            </xpath>
+            <xpath expr="//t[@t-if='page_index == page_size - 1']/tr[3]" position="attributes">
+                <attribute name="class">hidden</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
