@@ -18,8 +18,30 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields, api, _
-from odoo.exceptions import except_orm, Warning, RedirectWarning
 
-import logging
-_logger = logging.getLogger(__name__)
+{
+    'name': 'Website Quote Template Monthly',
+    'version': '0.1',
+    'category': 'Tools',
+    'licence': 'AGPL-3',
+    'description': """
+More features for online quotation
+==================================
+
+* Product image in pricing
+* Product detail description for quotation
+* New unit of measure month
+* Additional table for monthly cost products
+
+""",
+    'author': 'Vertel AB',
+    'website': 'http://www.vertel.se',
+    'depends': ['website_quote', 'website_sale'],
+    'data': [
+        'views/sale_order_view.xml',
+        'views/template.xml',
+    ],
+    'application': False,
+    'installable': True,
+}
+# vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:

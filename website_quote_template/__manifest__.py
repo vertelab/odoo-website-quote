@@ -28,14 +28,14 @@
 More features for online quotation
 ==================================
 
-* Product image in pricing
-* Product detail description
+Additional quotation template
 
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['website_quote'],
+    'depends': ['website_quote_monthly'],
     'data': [
+        'data/data.xml',
         'views/sale_order_view.xml',
         'views/template.xml',
     ],
