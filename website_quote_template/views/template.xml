@@ -6,7 +6,7 @@
                 <xpath expr="//t[@t-call='website_quote.pricing']" position="before">
                     <t t-if="quotation">
                         <t t-foreach="quotation.order_line.filtered(lambda l: l.show_description_on_quotation == True)" t-as="line">
-                            <div t-field="line.product_id.website_description_quotation"/>
+                            <div t-field="line.product_id.website_description_quotation if line.product_id.website_description_quotation else line.product_id.product_tmpl_id.website_description_quotation"/>
                         </t>
                     </t>
                 </xpath>
