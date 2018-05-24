@@ -50,6 +50,21 @@ class ProductTemplate(models.Model):
         }
 
 
+class ProductProduct(models.Model):
+    _inherit = 'product.product'
+
+    website_description_quotation = fields.Html(string='Website Description for Quotation')
+
+    @api.multi
+    def edit_website_description_quotation(self):
+        return {
+            'name': 'Go to website',
+            'res_model': 'ir.actions.act_url',
+            'type': 'ir.actions.act_url',
+            'url': '/shop/product/%s/quotation/' %self.product_tmpl_id.id,
+            'target': 'self',
+        }
+
 class Controller(http.Controller):
 
     @http.route(['/shop/product/<model("product.template"):product>/quotation/'], type='http', auth='user', website=True)
