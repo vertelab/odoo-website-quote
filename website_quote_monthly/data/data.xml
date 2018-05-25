@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_uom_month" model="product.uom">
+            <field name="name">Month</field>
+            <field name="category_id" ref="product.uom_categ_wtime"/>
+            <field name="factor_inv" eval="20.0"/>
+            <field name="uom_type">bigger</field>
+        </record>
+
+    </data>
+</odoo>
