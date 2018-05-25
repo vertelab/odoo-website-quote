@@ -19,9 +19,10 @@
             <field name="inherit_id" ref="website_sale.product_template_form_view"/>
             <field name="arch" type="xml">
                 <div name="button_box" position="inside">
-                    <button class="oe_stat_button" name="edit_website_description_quotation"
-                        type="object" icon="fa-pencil">
-                        <span class="oe_inline">Quotation Description</span>
+                    <button class="oe_stat_button" name="edit_website_description_quotation" type="object" icon="fa-pencil">
+                        <div class="o_form_field o_stat_info">
+                            <span class="oe_inline">Quotation<br/>Description</span>
+                        </div>
                     </button>
                 </div>
             </field>
