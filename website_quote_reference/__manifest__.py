@@ -33,7 +33,7 @@ Added references to online quotation
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['website_quote_monthly', 'website_imagemagick'],
+    'depends': ['website_quote', 'website_imagemagick'],
     'data': [
         'data/data.xml',
         'views/sale_order_view.xml',
