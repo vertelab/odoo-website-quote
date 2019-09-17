@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="website_quote_template" model="sale.quote.template">
+            <field name="name">Quotation Template (with product description)</field>
+            <field name="number_of_days">30</field>
+            <field name="website_description" type="xml">
+                <section data-snippet-id="text-block">
+                    <h1 class="page-header">Our Offer</h1>
+                    <p>
+                        You can <strong>set a description per product</strong>. Odoo will
+                        automatically create a quotation using the descriptions
+                        of all products in the proposal. The table of content
+                        on the left is generated automatically using the styles you
+                        used in your description (heading 1, heading 2, ...)
+                    </p><p>
+                        If edit a quotation from the 'Preview' of a quotation, you will
+                        update the quotation for this customer only. If you edit the quotation
+                        template (from the Configuration menu), all future quotations will
+                        use this modified template.
+                    </p>
+                </section>
+                <section class="s_text_block">
+                    <div class="container mb32">
+                        <div class="col-md-8">
+                            <h2 class="o_default_snippet_text" id="quote_2">Title</h2>
+                            <h3 class="text-muted o_default_snippet_text">Subtitle</h3>
+                            <div class="row">
+                                <div class="col-md-12 mb16 mt16">
+                                <p class="o_default_snippet_text">
+                                A great way to catch your reader's attention is to tell a story.
+                                Everything you consider writing can be told as a story.
+                            </p>
+                            <p class="o_default_snippet_text">
+                                <b class="o_default_snippet_text">Great stories have personality.</b> Consider telling
+                                a great story that provides personality. Writing a story
+                                with personality for potential clients will assists with
+                                making a relationship connection. This shows up in small
+                                quirks like word choices or phrases. Write from your point
+                                of view, not from someone else's experience.
+                                </p>
+                                <p class="o_default_snippet_text">
+                                    <b class="o_default_snippet_text">Great stories are for everyone even when only written for
+                                just one person.</b> If you try to write with a wide general
+                                audience in mind, your story will ring false and be bland.
+                                No one will be interested. Write for one person. If it’s genuine for the one, it’s genuine for the rest.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="">Benefits</h3>
+                            <div style="background-color: #ddd; padding: 10px;">
+                                <p>
+                                    Great stories have personality. Consider telling a great story that provides personality. Writing a story with personality for potential clients will assists with making a relationship connection. This shows up in small quirks like word choices or phrases. Write from your point of view, not from someone else's experience.
+                                </p>
+                                <p>
+                                    Great stories are for everyone even when only written for just one person. If you try to write with a wide general audience in mind, your story will ring false and be bland. No one will be interested. Write for one person. If it’s genuine for the one, it’s genuine for the rest.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </field>
+        </record>
+
+    </data>
+</odoo>

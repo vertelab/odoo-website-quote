@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
-        <template id="pricing" inherit_id="website_quote.pricing">
+        
+        <template id="pricing" inherit_id="website_quote.pricing" customize_show="True" name="Monthly total" >
             <xpath expr="//h1[@class='page-header']" position="replace">
                 <h1 class="page-header">Fixed Costs</h1>
             </xpath>
@@ -78,7 +78,7 @@
             </xpath>
         </template>
 
-        <template id="so_quotation" inherit_id="website_quote.so_quotation">
+        <template id="so_quotation" inherit_id="website_quote.so_quotation" customize_show="True" name="Monthly total (box)" >
             <xpath expr="//div[@t-if=&quot;order_valid and quotation.state in ['draft', 'sent']&quot;]" position="after">
                 <div id="sidebar-total" class="" style="padding: 0px 20px;" t-ignore="True">
                     <p class="text-center">Fixed Total: <strong><span data-id="total_amount" t-field="quotation.amount_untaxed" t-options='{"widget": "monetary","display_currency": quotation.pricelist_id.currency_id}'/></strong></p>
