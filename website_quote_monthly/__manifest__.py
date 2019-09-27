@@ -32,11 +32,10 @@ More features for online quotation
 * Product detail description for quotation
 * New unit of measure month
 * Additional table for monthly cost products
-
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['website_quote'],
+    'depends': ['sale_quotation_builder'],
     'data': [
         'data/data.xml',
         'views/template.xml',
