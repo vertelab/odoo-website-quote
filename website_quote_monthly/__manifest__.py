@@ -36,10 +36,9 @@ More features for online quotation
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['website_quote', 'website_sale', 'contract'],
+    'depends': ['website_quote'],
     'data': [
         'data/data.xml',
-        'views/sale_order_view.xml',
         'views/template.xml',
     ],
     'application': False,
