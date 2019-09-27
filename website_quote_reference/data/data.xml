@@ -1,51 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
-        <record id="img_partner" model="image.recipe">
-            <field name="name">Image Partner (Thumbnail)</field>
-            <field name="image_format">jpeg</field>
-            <field name="description">Define the canvas size to limit the image maximum size.
-Define the background color with hex.
-</field>
-            <field name="recipe">bg = Image()
-bg.blank(width=int(canvas_size), height=int(canvas_size), background=Color(bg_color))
-bg.format = 'png'
-image.transform(resize='%sx%s' %(int(canvas_size), int(canvas_size)))
-bg.composite(image, (int(canvas_size)-image.width)/2, (int(canvas_size)-image.height)/2)
-bg.type='grayscale'
-res = bg
-            </field>
-        </record>
-        <record id="img_partner_param_canvas_size_xs" model="image.recipe.param">
-            <field name="name">canvas_size</field>
-            <field name="value">120</field>
-            <field name="device_type">xs</field>
-            <field name="recipe_id" ref="website_quote_reference.img_partner"/>
-        </record>
-        <record id="img_partner_param_canvas_size_sm" model="image.recipe.param">
-            <field name="name">canvas_size</field>
-            <field name="value">120</field>
-            <field name="device_type">sm</field>
-            <field name="recipe_id" ref="website_quote_reference.img_partner"/>
-        </record>
-        <record id="img_partner_param_canvas_size_md" model="image.recipe.param">
-            <field name="name">canvas_size</field>
-            <field name="value">120</field>
-            <field name="device_type">md</field>
-            <field name="recipe_id" ref="website_quote_reference.img_partner"/>
-        </record>
-        <record id="img_partner_param_canvas_size_lg" model="image.recipe.param">
-            <field name="name">canvas_size</field>
-            <field name="value">120</field>
-            <field name="device_type">lg</field>
-            <field name="recipe_id" ref="website_quote_reference.img_partner"/>
-        </record>
-        <record id="img_partner_param_bg_color" model="image.recipe.param">
-            <field name="name">bg_color</field>
-            <field name="value">#FFFFFF</field>
-            <field name="recipe_id" ref="website_quote_reference.img_partner"/>
-        </record>
-
-    </data>
+    <record id="img_partner" model="image.recipe">
+        <field name="name">Image Partner (Thumbnail)</field>
+        <field name="image_format">jpeg</field>
+        <field name="description">
+            Define the canvas size to limit the image maximum size.
+            Define the background color with hex.
+        </field>
+        <field name="recipe">
+            bg = Image()
+            bg.blank(width=int(canvas_size), height=int(canvas_size), background=Color(bg_color))
+            bg.format = 'png'
+            image.transform(resize='%sx%s' %(int(canvas_size), int(canvas_size)))
+            bg.composite(image, (int(canvas_size)-image.width)/2, (int(canvas_size)-image.height)/2)
+            bg.type='grayscale'
+            res = bg
+        </field>
+    </record>
+    <record id="img_partner_param_canvas_size_xs" model="image.recipe.param">
+        <field name="name">canvas_size</field>
+        <field name="value">120</field>
+        <field name="device_type">xs</field>
+        <field name="recipe_id" ref="website_quote_reference.img_partner" />
+    </record>
+    <record id="img_partner_param_canvas_size_sm" model="image.recipe.param">
+        <field name="name">canvas_size</field>
+        <field name="value">120</field>
+        <field name="device_type">sm</field>
+        <field name="recipe_id" ref="website_quote_reference.img_partner" />
+    </record>
+    <record id="img_partner_param_canvas_size_md" model="image.recipe.param">
+        <field name="name">canvas_size</field>
+        <field name="value">120</field>
+        <field name="device_type">md</field>
+        <field name="recipe_id" ref="website_quote_reference.img_partner" />
+    </record>
+    <record id="img_partner_param_canvas_size_lg" model="image.recipe.param">
+        <field name="name">canvas_size</field>
+        <field name="value">120</field>
+        <field name="device_type">lg</field>
+        <field name="recipe_id" ref="website_quote_reference.img_partner" />
+    </record>
+    <record id="img_partner_param_bg_color" model="image.recipe.param">
+        <field name="name">bg_color</field>
+        <field name="value">#FFFFFF</field>
+        <field name="recipe_id" ref="website_quote_reference.img_partner" />
+    </record>
 </odoo>

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
-            <template id="so_quotation_content" inherit_id="website_quote.so_quotation_content">
-                <xpath expr="//t[@t-call='website_quote.pricing']" position="before">
-                    <t t-if="quotation">
-                        <t t-foreach="quotation.order_line.filtered(lambda l: l.show_description_on_quotation == True)" t-as="line">
-                            <section data-snippet-id="title">
-                                <h1 class="page-header" t-field="line.product_id.name"/>
-                            </section>
-                            <div t-field="line.product_id.website_description_quotation if line.product_id.website_description_quotation else line.product_id.product_tmpl_id.website_description_quotation"/>
-                        </t>
-                    </t>
-                </xpath>
-            </template>
-
-    </data>
+    <template id="so_quotation_content" inherit_id="sale_quotation_builder.so_quotation_content">
+        <xpath expr="//t[@t-call='sale_quotation_builder.pricing']" position="before">
+            <t t-if="quotation">
+                <t t-foreach="quotation.order_line.filtered(lambda l: l.show_description_on_quotation == True)" t-as="line">
+                    <section data-snippet-id="title">
+                        <h1 class="page-header" t-field="line.product_id.name" />
+                    </section>
+                    <div t-field="line.product_id.website_description_quotation if line.product_id.website_description_quotation else line.product_id.product_tmpl_id.website_description_quotation" />
+                </t>
+            </t>
+        </xpath>
+    </template>
 </odoo>

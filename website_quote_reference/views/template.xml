@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <template id="so_quotation_content" inherit_id="website_quote.so_quotation_content">
-            <xpath expr="." position="inside">
-                <t t-if="len(quotation.reference_ids) &gt; 0">
-                    <section>
-                        <h1 class="page-header">Reference</h1>
-                        <div class="container">
-                            <div class="row">
-                                <t t-foreach="quotation.reference_ids" t-as="ref">
-                                    <div class="col-md-2 col-sm-3 col-xs-6 mt16 mb16">
-                                        <img t-att-src="'/imagefield/res.partner/image/%s/ref/website_quote_reference.img_partner' %ref.id" class="img img-responsive " t-att-title="ref.name" style="max-height: 120px;" />
-                                    </div>
-                                </t>
-                            </div>
+    <template id="so_quotation_content" inherit_id="sale_quotation_builder.so_quotation_content">
+        <xpath expr="." position="inside">
+            <t t-if="len(quotation.reference_ids) &gt; 0">
+                <section>
+                    <h1 class="page-header">Reference</h1>
+                    <div class="container">
+                        <div class="row">
+                            <t t-foreach="quotation.reference_ids" t-as="ref">
+                                <div class="col-md-2 col-sm-3 col-xs-6 mt16 mb16">
+                                    <img t-att-src="'/imagefield/res.partner/image/%s/ref/website_quote_reference.img_partner' %ref.id" class="img img-responsive " t-att-title="ref.name" style="max-height: 120px;" />
+                                </div>
+                            </t>
                         </div>
-                    </section>
-                </t>
-            </xpath>
-        </template>
-    </data>
+                    </div>
+                </section>
+            </t>
+        </xpath>
+    </template>
 </odoo>
