@@ -21,7 +21,7 @@
 
 {
     'name': 'Website Quote Product Description',
-    'version': '12.0.0.1',
+    'version': '0.1',
     'category': 'Tools',
     'licence': 'AGPL-3',
     'description': """
