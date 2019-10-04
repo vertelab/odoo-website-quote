@@ -77,6 +77,7 @@
                 </table>
             </xpath>
         </template>
+
         <template id="so_quotation" inherit_id="website_quote.so_quotation" customize_show="True" name="Monthly total (box)" >
             <xpath expr="//div[@t-if=&quot;order_valid and quotation.state in ['draft', 'sent']&quot;]" position="after">
                 <div id="sidebar-total" class="" style="padding: 0px 20px;" t-ignore="True">
@@ -89,5 +90,103 @@
                 </div>
             </xpath>
         </template>
+
+        <template id="optional_products" inherit_id="website_quote.optional_products">
+            <xpath expr="//thead/tr/th[1]" position="before">
+                <th/>
+            </xpath>
+            <xpath expr="//tbody/tr/t/td[1]" position="before">
+                <td>
+                    <img class="img img-responsive center-block" t-att-src="'/website/image/product.product/%s/image/50x50' %option.product_id.id" style="max-height: 50px;"/>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="so_quotation_content" inherit_id="website_quote.so_quotation_content">
+            <xpath expr="//t[@t-call='website_quote.optional_products']" position="after">
+                <section data-snippet-id="title">
+                    <h1 class="page-header">About us</h1>
+                </section>
+                <section data-snippet-id="text-block">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                This is a <strong>sample quotation template</strong>. You should
+                                customize it to fit your own needs from the <i>Sale</i>
+                                application, using the menu: Configuration /
+                                Quotation Templates.
+                            </p><p>
+                                Great quotation templates will significantly
+                                <strong>boost your success rate</strong>. The
+                                first section is usually about your company,
+                                your references, your methodology or
+                                guarantees, your team, SLA, terms and conditions, etc.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section data-snippet-id="quality">
+                    <div class="row mt32">
+                        <div class="col-md-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                   <center><h3 class="panel-title">Our Quality</h3></center>
+                                </div>
+                                <div class="panel-body">
+                                   <p>
+                                       Product quality is the foundation we
+                                       stand on; we build it with a relentless
+                                       focus on fabric, performance and craftsmanship.
+                                   </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                   <center><h3 class="panel-title">Our Service</h3></center>
+                                </div>
+                                <div class="panel-body">
+                                   <p>
+                                       As a leading professional services firm,
+                                       we know that success is all about the
+                                       commitment we put on strong services.
+                                   </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                   <center><h3 class="panel-title">Price</h3></center>
+                                </div>
+                                <div class="panel-body">
+                                   <p>
+                                       We always ensure that our products are
+                                       set at a fair price so that you will be
+                                       happy to buy them.
+                                   </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+        </template>
+
+        <template id="product_description_quotation" name="Product Description on Quotation">
+            <t t-call="website.layout">
+                <div class="container mt32 mb32">
+                    <div class="row">
+                        <a class="btn btn-success pull-right" t-att-href="'/web#return_label=Website&amp;view_type=form&amp;model=product.template&amp;id=%s&amp;action=product.product_template_action' %product.id">Go back to product</a>
+                        <div class="text-center">
+                            <h1 t-field="product.name"/>
+                        </div>
+                        <div t-field="product.website_description_quotation"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+
     </data>
 </odoo>
