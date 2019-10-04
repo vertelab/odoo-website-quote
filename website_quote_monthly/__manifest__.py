@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Odoo, Open Source Enterprise Management Solution, third party addon
-#    Copyright (C) 2019 Vertel AB (<http://vertel.se>).
+#    Copyright (C) 2018 Vertel AB (<http://vertel.se>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,7 +21,7 @@
 
 {
     'name': 'Website Quote Template Monthly',
-    'version': '12.0.0.1',
+    'version': '0.1',
     'category': 'Tools',
     'licence': 'AGPL-3',
     'description': """
