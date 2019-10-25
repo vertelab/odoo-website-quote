@@ -5,11 +5,11 @@
     'author':'Vertel AB',
 
     'data': [
-    'assets.xml', 'sale_order_views.xml',
+    'templates.xml','assets.xml', 'sale_order_views.xml',
     ],
 
-    'category': 'Theme/Corporate',
-    'depends': ['website', 'sale'],
+    'category': 'Sales',
+    'depends': ['sale_quotation_builder'],
     'application': True,
 }
 

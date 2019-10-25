@@ -33,7 +33,7 @@ class SaleOrder(models.Model):
     @api.one
     @api.depends('order_line')
     def _compute_amount_month(self):
-        month = self.env.ref('website_quote_template.product_uom_month')
+        month = self.env.ref('website_quote_monthly.product_uom_month')
         self.order_line_month_ids = self.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id == month)
         self.order_line_fixed_ids = self.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id != month)
     

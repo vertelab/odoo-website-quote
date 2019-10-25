@@ -22,7 +22,7 @@
 {
     'name': 'Website Quote Template Monthly',
     'version': '12.0.0.1',
-    'category': 'Tools',
+    'category': 'Sales',
     'licence': 'AGPL-3',
     'description': """
 More features for online quotation
