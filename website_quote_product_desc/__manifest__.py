@@ -34,7 +34,7 @@ More features for online quotation
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['sale_quotation_builder'],
+    'depends': ['website_quote'],
     'data': [
         'data/data.xml',
         'views/sale_order_view.xml',
