@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="optional_products" inherit_id="sale_quotation_builder.optional_products">
+        <template id="optional_products" inherit_id="website_quote.optional_products">
             <xpath expr="//thead/tr/th[1]" position="before">
                 <th />
             </xpath>
@@ -11,8 +11,8 @@
                 </td>
             </xpath>
         </template>
-        <template id="so_quotation_content" inherit_id="sale_quotation_builder.so_quotation_content">
-            <xpath expr="//t[@t-call='sale_quotation_builder.optional_products']" position="after">
+        <template id="so_quotation_content" inherit_id="website_quote.so_quotation_content">
+            <xpath expr="//t[@t-call='website_quote.optional_products']" position="after">
                 <section data-snippet-id="title">
                     <h1 class="page-header">About us</h1>
                 </section>
