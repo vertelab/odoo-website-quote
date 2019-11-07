@@ -78,14 +78,14 @@
             </xpath>
         </template>
 
-        <template id="so_quotation" inherit_id="website_quote.so_quotation">
+        <template id="so_quotation" inherit_id="website_quote.so_quotation" name="Monthly sidebar">
             <xpath expr="//div[@t-if=&quot;order_valid and quotation.state in ['draft', 'sent']&quot;]" position="after">
                 <div id="sidebar-total" class="" style="padding: 0px 20px;" t-ignore="True">
                     <p class="text-center">Fixed Total: <strong><span data-id="total_amount" t-field="quotation.amount_untaxed" t-options='{"widget": "monetary","display_currency": quotation.pricelist_id.currency_id}'/></strong></p>
                     <p class="text-center">(Excl. tax)</p>
                 </div>
                 <div id="sidebar-total-monthly" class="" style="padding: 0px 20px;" t-ignore="True">
-                    <p class="text-center">Monthly Total: <strong><span data-id="monthly_total_amount" t-esc="sum(quotation.project_id.recurring_invoice_line_ids.mapped('price_subtotal'))" t-options='{"widget": "monetary","display_currency": quotation.pricelist_id.currency_id}'/></strong></p>
+                    <p class="text-center">Monthly Total: <strong><span data-id="monthly_total_amount" t-esc="sum(line.price_subtotal for line in quotation.project_id.recurring_invoice_line_ids)" t-options='{"widget": "monetary","display_currency": quotation.pricelist_id.currency_id}'/></strong></p>
                     <p class="text-center">(Excl. tax)</p>
                 </div>
             </xpath>
