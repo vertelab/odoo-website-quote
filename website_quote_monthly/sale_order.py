@@ -36,7 +36,7 @@ class SaleOrder(models.Model):
         for order in self:
             order.order_line_month_ids = order.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id == month)
             order.order_line_fixed_ids = order.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id != month)
-            amount_untaxed = amount_tax = 0.0   
+            amount_untaxed = amount_untaxed_fixed = amount_untaxed_month = amount_tax = amount_tax_month = amount_tax_fixed = 0.0 
             for line in order.order_line:
                 if line.product_id and line.product_id.uom_id == month:
                     amount_untaxed_month += line.price_subtotal
