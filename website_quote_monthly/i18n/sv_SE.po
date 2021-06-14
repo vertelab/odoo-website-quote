@@ -1,0 +1,146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_quote_monthly
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20191022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-16 15:44+0000\n"
+"PO-Revision-Date: 2019-12-16 15:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+msgid "% discount"
+msgstr "% rabatt"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "&amp;nbsp;\n"
+"                        <span>on</span>\n"
+"                        &amp;nbsp;"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "<b>Total costs</b>"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "<span>Discount</span>"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Deltotal</strong>"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "<strong>Total</strong>"
+msgstr "<strong>Totalt</strong>"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+msgid "Add to cart"
+msgstr "Lägg i kundvagnen"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_fixed_total
+msgid "Amount Fixed Total"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_month_total
+msgid "Amount Month Total"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "Fixed"
+msgstr "Fast"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Fixed Costs"
+msgstr "Fast kostnad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "IMG"
+msgstr " "
+
+#. module: website_quote_monthly
+#: model:uom.uom,name:website_quote_monthly.product_uom_month
+msgid "Month"
+msgstr "Månad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "Monthly"
+msgstr "Månadsvis"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Monthly costs"
+msgstr "Månadskostnad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+msgid "Optional Products"
+msgstr "Optioner"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_fixed_ids
+msgid "Order Line Fixed"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_month_ids
+msgid "Order Line Month"
+msgstr ""
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+msgid "Price"
+msgstr "Pris"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.optional_products
+msgid "Product"
+msgstr "Produkt"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Products"
+msgstr "Produkter"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Quantity"
+msgstr "Antal"
+
+#. module: website_quote_monthly
+#: model:ir.model,name:website_quote_monthly.model_sale_order
+msgid "Sale Order"
+msgstr "Kundorder"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Unit Price"
+msgstr "Styckpris"
+
