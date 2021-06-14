@@ -21,7 +21,7 @@
 
 {
     'name': 'Website Quote Template Monthly',
-    'version': '12.0.0.1',
+    'version': '14.0.0.1',
     'category': 'Sales',
     'licence': 'AGPL-3',
     'description': """
