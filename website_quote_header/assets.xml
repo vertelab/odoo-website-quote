@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Customize header  -->
+  <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+
+  </template>
+  <template id="less" name="less" inherit_id="website.assets_frontend">
+    <xpath expr="link[last()]" position="after">
+
+    </xpath>
+  </template>
+</odoo>
