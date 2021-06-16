@@ -21,9 +21,11 @@
 
 {
     'name': 'Website Quote Template Monthly',
-    'version': '14.0.0.1',
+    'author': 'Vertel AB',
     'category': 'Sales',
     'licence': 'AGPL-3',
+    'version': '14.0.1.0.0',
+    'website': 'https://www.vertel.se',
     'description': """
 More features for online quotation
 ==================================
@@ -33,14 +35,10 @@ More features for online quotation
 * New unit of measure month
 * Additional table for monthly cost products
 """,
-    'author': 'Vertel AB',
-    'website': 'http://www.vertel.se',
     'depends': ['sale_quotation_builder'],
     'data': [
         'data/data.xml',
         'views/template.xml',
     ],
-    'application': False,
-    'installable': True,
 }
 # vim:expandtab:smartindent:tabstop=4s:softtabstop=4:shiftwidth=4:
