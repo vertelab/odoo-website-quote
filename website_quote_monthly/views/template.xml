@@ -2,17 +2,23 @@
 <odoo>
     <template id="monthly_quote" name="monthly_quote" inherit_id="sale.sale_order_portal_template">
         <xpath expr="//t[@t-set='title']" position="inside">
-            <t t-set="d" t-value="" />
-            <h4>
-                <b>Total costs</b>
+            <t t-set="d" t-value="'{:_.0f}'.format(round(sale_order.amount_fixed_total)).replace('_',' ')"/>
+            <t t-set="monthly_total" t-value="'{:_.0f}'.format(round(sale_order.amount_month_total)).replace('_',' ')"/>
+            <h4 class="pb-50">
+                <!--<b>Total costs</b>-->
+                <b>
+                    
+                    
+                </b>
             </h4>
-            <h4 class="mb-0">
-                Fixed
-                <b t-field="sale_order.amount_fixed_total" data-id="amount_fixed_total" />
+
+            <h4 class="mb-0 " t-if = "sale_order.amount_fixed_total">
+                Engångskostnad
+                    <b t-raw="d" data-id="amount_fixed_total"/>
             </h4>
-            <h4 class="mb-0">
+            <h4 class="mb-0" t-if = "sale_order.amount_month_total">
                 Monthly
-                <b t-field="sale_order.amount_month_total" data-id="amount_month_total" />
+                <b t-raw="monthly_total" data-id="amount_month_total" />
             </h4>
         </xpath>
         <!-- portal_sidebar -->
@@ -141,7 +147,7 @@
                     </div>
                 </div>
             </section>
-            <section id="monthly-costs" style="page-break-inside: auto;" class="mt32">
+            <section id="monthly-costs" style="page-break-inside: auto;" class="mt32" t-if="sale_order.amount_month_total">
                 <h2 id="monthly_costs">Monthly costs</h2>
                 <!-- <t t-set="display_discount" t-value="True in [line.discount > 0 for line in sale_order.order_line]" /> -->
                 <table class="table table-sm" id="sales_order_table">
