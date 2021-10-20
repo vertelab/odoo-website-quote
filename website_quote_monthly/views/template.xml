@@ -4,6 +4,7 @@
         <xpath expr="//t[@t-set='title']" position="inside">
             <t t-set="d" t-value="'{:_.0f}'.format(round(sale_order.amount_fixed_total)).replace('_',' ')"/>
             <t t-set="monthly_total" t-value="'{:_.0f}'.format(round(sale_order.amount_month_total)).replace('_',' ')"/>
+            <t t-set="sale_currency" t-value="sale_order.currency_id.symbol"/>
             <h4 class="pb-50">
                 <!--<b>Total costs</b>-->
                 <b>
@@ -13,12 +14,14 @@
             </h4>
 
             <h4 class="mb-0 " t-if = "sale_order.amount_fixed_total">
-                Engångskostnad
+                Fixed Costs
                     <b t-raw="d" data-id="amount_fixed_total"/>
+                    <b t-raw="sale_currency" data-id="sale_currency_id1"/>
             </h4>
             <h4 class="mb-0" t-if = "sale_order.amount_month_total">
                 Monthly
                 <b t-raw="monthly_total" data-id="amount_month_total" />
+                <b t-raw="sale_currency" data-id="sale_currency_id2"/>
             </h4>
         </xpath>
         <!-- portal_sidebar -->
