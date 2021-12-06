@@ -34,7 +34,7 @@
       </div>
     </xpath>
     <!-- TODO: FIND OUT WHAT THIS IS A PLACEHOLDER FOR -->
-    <xpath expr="//section[@id='terms']" position="before">
+    <!-- <xpath expr="//section[@id='terms']" position="before">
       <div class="alert alert-info alert-dismissable" t-ignore="True" role="status">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">&amp;times;</button>
         <p>
@@ -53,7 +53,7 @@
         </p>
       </div>
       <div id="quotation_footer" t-field="sale_order.website_description_footer" class="oe_no_empty" />
-    </xpath>
+    </xpath> -->
     <xpath expr="//section[@id='terms']" position="inside">
       <t t-if="sale_order.terms_page">
         <br />
