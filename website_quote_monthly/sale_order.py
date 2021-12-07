@@ -48,11 +48,16 @@ class SaleOrder(models.Model):
                 'amount_tax_fixed':amount_tax_fixed,
                 'amount_month_total': amount_untaxed_month,
                 'amount_fixed_total': amount_untaxed_fixed,
+                'amount_month_total_tax': amount_untaxed_month + amount_tax_month,
+                'amount_fixed_total_tax': amount_untaxed_fixed + amount_tax_fixed,
                 'amount_tax_month':amount_tax_month
             })
     amount_tax_fixed = fields.Monetary(compute='_compute_amount_month')
     amount_tax_month = fields.Monetary(compute='_compute_amount_month')
     amount_month_total = fields.Float(compute='_compute_amount_month')
+    amount_month_total_tax = fields.Float(compute='_compute_amount_month')
     amount_fixed_total = fields.Float(compute='_compute_amount_month')
+    amount_fixed_total_tax = fields.Float(compute='_compute_amount_month')
+    
     order_line_month_ids = fields.One2many('sale.order.line', compute='_compute_amount_month')
     order_line_fixed_ids = fields.One2many('sale.order.line', compute='_compute_amount_month')

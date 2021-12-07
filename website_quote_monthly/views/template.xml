@@ -146,7 +146,7 @@
                                     <strong>Total</strong>
                                 </td>
                                 <td class="text-right">
-                                    <span data-id="total_amount" t-field="sale_order.amount_total" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                    <span data-id="total_amount" t-field="sale_order.amount_fixed_total_tax" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                 </td>
                             </tr>
                         </table>
@@ -274,7 +274,7 @@
                                     <strong>Total</strong>
                                 </td>
                                 <td class="text-right">
-                                    <span data-id="total_amount" t-field="sale_order.amount_month_total" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                    <span data-id="total_amount" t-field="sale_order.amount_month_total_tax" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                 </td>
                             </tr>
                         </table>
