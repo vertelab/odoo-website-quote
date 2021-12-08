@@ -134,9 +134,6 @@
                                         </td>
                                         <td class="text-right">
                                             <span t-field="sale_order.amount_tax_fixed" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
-<!--
-                                            <span t-esc="amount_by_group[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
--->
                                         </td>
                                     </t>
                                 </tr>
@@ -262,9 +259,6 @@
                                         </td>
                                         <td class="text-right">
                                             <span t-field="sale_order.amount_tax_month" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
-<!--
-                                            <span t-esc="amount_by_group[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
--->
                                         </td>
                                     </t>
                                 </tr>
@@ -281,6 +275,7 @@
                     </div>
                 </div>
             </section>
+            <section id="details"></section>
         </xpath>
     </template>
     <template id="optional_products" name="optional_products" inherit_id="sale_management.sale_order_portal_content_inherit_sale_management">
