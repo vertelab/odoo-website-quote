@@ -33,7 +33,7 @@
         </div>
       </div>
     </xpath>
-    <xpath expr="//section/h3" position="after">
+    <xpath expr="//section[@id='details']" position="after">
       <t t-set="product_tmpl_ids" t-value="[]" />
       <t t-foreach="sale_order.sale_order_option_ids" t-as="option_line">
         <t t-if="option_line.product_id.product_tmpl_id.id not in product_tmpl_ids">
