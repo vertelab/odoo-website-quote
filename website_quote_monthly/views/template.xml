@@ -108,7 +108,7 @@
                     </tbody>
                 </table>
                 <div id="total" class="row" name="total" style="page-break-inside: avoid;">
-                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-10 col-md-2'} ml-auto">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-8 col-md-4'} ml-auto">
                         <!-- Should be replaced in master by t-call="sale.sale_order_portal_content_totals_table" -->
                         <table class="table table-sm">
                             <!-- <tr class="border-black" style="border-bottom:1px solid #dddddd;"> <td> <strong>Subtotal</strong> </td> <td class="text-right"> <span data-id="total_untaxed" t-field="sale_order.amount_month_total" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}' /> </td> </tr> -->
