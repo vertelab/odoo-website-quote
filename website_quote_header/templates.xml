@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="website_quote_header" inherit_id="sale.sale_order_portal_content" name="quote header">
+  <template id="website_quote_header" inherit_id="sale.sale_order_portal_content" name="Quote Header" priority="17">
     <xpath expr="//div[@id='informations']" position="replace">
       <!-- Informations -->
       <div id="informations">
@@ -32,6 +32,25 @@
           </div>
         </div>
       </div>
+    </xpath>
+    <xpath expr="//section[@id='details']" position="after">
+      <t t-set="product_tmpl_ids" t-value="[]" />
+      <t t-foreach="sale_order.sale_order_option_ids" t-as="option_line">
+        <t t-if="option_line.product_id.product_tmpl_id.id not in product_tmpl_ids">
+          <t t-set="product_tmpl_ids" t-value="product_tmpl_ids + [option_line.product_id.product_tmpl_id.id]" />
+          <a t-att-id="option_line.id" />
+          <div class="alert alert-info alert-dismissable mt16 css_non_editable_mode_hidden o_not_editable" t-ignore="True" role="status">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">×</button>
+            Product option:
+            <strong t-esc="option_line.product_id.name" />
+            :
+            this content will appear on the quotation only if this
+            product is not removed.
+          </div>
+          <div t-att-class="'oe_no_empty' if option_line.website_description else 'oe_no_empty d-print-none'" t-field="option_line.website_description" />
+        </t>
+      </t>
+
     </xpath>
     <!-- TODO: FIND OUT WHAT THIS IS A PLACEHOLDER FOR -->
     <xpath expr="//section[@id='terms']" position="before">
@@ -78,9 +97,10 @@
           table of content automatically.
         </p>
       </div>
-      <div id="template_footer" t-field="template.website_description_footer" class="oe_no_empty" />      
+      <div id="template_footer" t-field="template.website_description_footer" class="oe_no_empty" />
     </xpath>
   </template>
+
   
       <template id="website_description" name="Uppdrags">
         <t t-raw="qweb"/>
@@ -94,5 +114,4 @@
 -->
 <!-- addition -->   
 </odoo>
-
 
