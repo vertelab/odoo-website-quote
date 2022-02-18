@@ -81,4 +81,18 @@
       <div id="template_footer" t-field="template.website_description_footer" class="oe_no_empty" />      
     </xpath>
   </template>
+  
+      <template id="website_description" name="Uppdrags">
+        <t t-raw="qweb"/>
+        <span>
+        </span>
+    </template>
+    
+<!-- addition -->
+<!--
+    <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.website_description,sale_order)">
+-->
+<!-- addition -->   
 </odoo>
+
+
