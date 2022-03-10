@@ -11,6 +11,6 @@
         'sale_order_views.xml',
         'templates.xml', 
         ],
-    'depends': ['sale_quotation_builder'],
+    'depends': ['sale','sale_quotation_builder'],
 }
 

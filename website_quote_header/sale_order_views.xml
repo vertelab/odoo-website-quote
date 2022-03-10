@@ -9,6 +9,15 @@
         <field name="terms_page" />
         <field name="website_description_footer" invisible="1" />
       </field>
+      
+       <page name="customer_signature" position="after">
+            <page string="Extra Header Info">
+                      <field name="header_template_description"/>
+            </page>
+            <page string="Extra Footer Info">
+                      <field name="footer_template_description"/>
+            </page>
+      </page>
     </field>
   </record>
   <record id="sale_order_template_view_form" model="ir.ui.view">
@@ -20,6 +29,14 @@
         <field name="terms_page" />
         <field name="website_description_footer" invisible="1" />
       </field>
+      <page name="confirmation" position="after">
+            <page string="Extra Header Info">
+                      <field name="header_template_description"/>
+            </page>
+            <page string="Extra Footer Info">
+                      <field name="footer_template_description"/>
+            </page>
+      </page>
     </field>
   </record>
 </odoo>

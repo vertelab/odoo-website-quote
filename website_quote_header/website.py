@@ -11,17 +11,57 @@ from lxml import etree
 class Website(models.Model):
     _inherit = 'website'
 
-    def render_from_field(self,template,website_description,value):
+    def render_from_field(self, template, website_description=None,value=None):
+
         view_id = self.env['ir.ui.view'].get_view_id(template)
         template = self.env['ir.ui.view'].sudo()._read_template(view_id)
-        template = template.replace('<span>\n','<span>\n'+website_description)
+        _logger.warning(f"1 {template=}")
+        if website_description:
+            # ~ template = template.replace('<span>\n','<span>\n'+website_description)
+            template = template.replace('</span>',website_description+'</span>')
+            _logger.warning(f"2 {template=}")
+        _logger.warning("b fromstring")
         view = etree.fromstring(template)
-        res = self.env['ir.qweb']._render(view,{'sale_order':value})
+        _logger.warning("a fromstring")
+        _logger.warning(f"{value}")
+        value_dict = {}
+        if value:
+            value_dict = {'sale_order':value}
+            _logger.warning(f"1{value_dict=}")
+            res = self.env['ir.qweb']._render(view,value_dict)
+        else:
+            _logger.warning(f"2{value_dict=}")
+            try:
+                res = self.env['ir.qweb']._render(view)
+            except:
+                return
+                
+        _logger.warning(f"{res=}")
+
+        
         return res
 
+# ~ <p>Uppdrag</p><div t-field="sale_order.project_ids"></div>
+    # ~ <small><b class="text-muted">Start</b></small>
+    # ~ <div t-field="sale_order.project_ids.date_start"></div>
 
-# ~ <!-- addition -->
-# ~ <!--
-    # ~ <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.website_description,sale_order)">
-# ~ -->
-# ~ <!-- addition -->   
+    # ~ <small><b class="text-muted">Slut</b></small>
+       # ~ <div t-field="sale_order.project_ids.date"></div>
+
+    # ~ <small><b class="text-muted">Kund</b></small>
+       # ~ <div t-field="sale_order.partner_id"></div>
+
+    # ~ <small><b class="text-muted">Telefon</b></small>
+       # ~ <div t-field="sale_order.partner_id.phone"></div>
+
+    # ~ <small><b class="text-muted">Mobil</b></small>
+       # ~ <div t-field="sale_order.partner_id.mobile"></div>
+
+    # ~ <small><b class="text-muted">Email</b></small>
+       # ~ <div t-field="sale_order.partner_id.email"></div>
+
+
+
+
+    
+

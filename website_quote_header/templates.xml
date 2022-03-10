@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!-- T-raw-->
+
+    
+    
   <template id="website_quote_header" inherit_id="sale.sale_order_portal_content" name="Quote Header" priority="17">
     <xpath expr="//div[@id='informations']" position="replace">
       <!-- Informations -->
+
       <div id="informations">
         <div t-if="sale_order.transaction_ids and not invoices and sale_order.state in ('sent', 'sale') and portal_confirmation == 'pay' and not success and not error" t-att-data-order-id="sale_order.id">
           <t t-if="sale_order.transaction_ids">
@@ -30,6 +35,9 @@
               <span t-field="sale_order.validity_date" t-options='{"widget": "date"}' />
             </div>
           </div>
+        </div>
+        <div class="row" t-if="sale_order">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.header_template_description,sale_order)"/>
         </div>
       </div>
     </xpath>
@@ -70,6 +78,9 @@
           table of content automatically.
         </p>
       </div>
+                                                                                                                                <div class="row" t-if="sale_order">
+                                                                                                                                    <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.footer_template_description,sale_order)"/>
+                                                                                                                                </div>
       <div id="quotation_footer" t-field="sale_order.website_description_footer" class="oe_no_empty" />
     </xpath>
     <xpath expr="//section[@id='terms']" position="inside">
@@ -100,18 +111,45 @@
       <div id="template_footer" t-field="template.website_description_footer" class="oe_no_empty" />
     </xpath>
   </template>
+  
+
 
   
-      <template id="website_description" name="Uppdrags">
-        <t t-raw="qweb"/>
-        <span>
-        </span>
-    </template>
+        <template id="website_description" name="Uppdrags">
+            <t t-raw="qweb"/>
+            <span>
+            </span>
+        </template>
     
-<!-- addition -->
+
 <!--
-    <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.website_description,sale_order)">
+    <template id="sale_order_portal_template_raw_header_inherit"  name="Raw Render From Field Header" priority="17"  inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//div[@id='quote_content']" position="before">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.header_template_description,sale_order)"/>
+        </xpath>
+    </template> 
 -->
-<!-- addition -->   
+
+<!--
+    <template id="sale_order_portal_content_raw_footer_inherit"  name="Raw Render From Field Header" priority="17"  inherit_id="sale.sale_order_portal_content">
+        <div class="row" id="so_date" position="before">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.header_template_description,sale_order)"/>
+        </div>
+        
+        <div id="total" class="row" position="after">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.footer_template_description,sale_order)"/>
+        </div>
+        
+        <xpath expr="//div[@id='so_date']" position="before">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.header_template_description,sale_order)"/>
+        </xpath>
+        
+        <xpath expr="//div[@id='quote_content']" position="before">
+            <div t-raw="request.env['website'].render_from_field('website_quote_header.website_description',sale_order.footer_template_description,sale_order)"/>
+        </xpath>
+    </template> 
+-->
+
+
 </odoo>
 
