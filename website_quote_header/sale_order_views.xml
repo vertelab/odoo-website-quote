@@ -17,6 +17,7 @@
             <page string="Extra Footer Info">
                       <field name="footer_template_description"/>
             </page>
+
       </page>
     </field>
   </record>
@@ -35,6 +36,9 @@
             </page>
             <page string="Extra Footer Info">
                       <field name="footer_template_description"/>
+            </page>
+            <page string="Website Description">
+                      <field name="website_description"/>
             </page>
       </page>
     </field>
