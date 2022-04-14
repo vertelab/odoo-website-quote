@@ -11,6 +11,7 @@ from lxml import etree
 class Website(models.Model):
     _inherit = 'website'
 
+    @api.model
     def render_from_field(self, template, website_description=None,value=None):
 
         view_id = self.env['ir.ui.view'].get_view_id(template)
