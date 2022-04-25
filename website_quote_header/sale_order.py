@@ -27,3 +27,4 @@ class SaleOrder(models.Model):
         
     terms_page = fields.Char('Terms Page')
     
+

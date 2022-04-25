@@ -15,19 +15,15 @@ class Website(models.Model):
 
         view_id = self.env['ir.ui.view'].get_view_id(template)
         template = self.env['ir.ui.view'].sudo()._read_template(view_id)
-        _logger.warning(f"1 {template=}")
         if website_description:
             # ~ template = template.replace('<span>\n','<span>\n'+website_description)
             template = template.replace('</span>',website_description+'</span>')
-            _logger.warning(f"2 {template=}")
-        _logger.warning("b fromstring")
+            template = template.replace('<br>','')#_render can't hande <br>
+            template = template.replace('<br/>','')#_render can't hande </br>
         view = etree.fromstring(template)
-        _logger.warning("a fromstring")
-        _logger.warning(f"{value}")
         value_dict = {}
         if value:
             value_dict = {'sale_order':value}
-            _logger.warning(f"1{value_dict=}")
             res = self.env['ir.qweb']._render(view,value_dict)
         else:
             _logger.warning(f"2{value_dict=}")
