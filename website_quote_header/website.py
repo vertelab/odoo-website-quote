@@ -27,13 +27,13 @@ class Website(models.Model):
             value_dict = {'sale_order':value}
             res = self.env['ir.qweb']._render(view,value_dict)
         else:
-            _logger.warning(f"2{value_dict=}")
+#            _logger.warning(f"2{value_dict=}")
             try:
                 res = self.env['ir.qweb']._render(view)
             except:
                 return
                 
-        _logger.warning(f"{res=}")
+#        _logger.warning(f"{res=}")
 
         
         return res
