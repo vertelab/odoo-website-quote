@@ -19,21 +19,21 @@ class Website(models.Model):
         if website_description:
             # ~ template = template.replace('<span>\n','<span>\n'+website_description)
             template = template.replace('</span>',website_description+'</span>')
-            template = template.replace('<br>','')#_render can't hande <br>
-            template = template.replace('<br/>','')#_render can't hande </br>
+            template = template.replace('<br>','<br/>')#_render can't hande <br>
+            #template = template.replace('<br/>','')#_render can't hande </br>
         view = etree.fromstring(template)
         value_dict = {}
         if value:
             value_dict = {'sale_order':value}
             res = self.env['ir.qweb']._render(view,value_dict)
         else:
-            _logger.warning(f"2{value_dict=}")
+#            _logger.warning(f"2{value_dict=}")
             try:
                 res = self.env['ir.qweb']._render(view)
             except:
                 return
                 
-        _logger.warning(f"{res=}")
+#        _logger.warning(f"{res=}")
 
         
         return res

@@ -32,10 +32,10 @@
       </field>
       <page name="confirmation" position="after">
             <page string="Extra Header Info">
-                      <field name="header_template_description"/>
+                      <field name="header_template_description" widget="html" options="{'style-inline': true}"/>
             </page>
             <page string="Extra Footer Info">
-                      <field name="footer_template_description"/>
+                      <field name="footer_template_description" widget="html" options="{'style-inline': true}"/>
             </page>
             <page string="Website Description">
                       <field name="website_description"/>
