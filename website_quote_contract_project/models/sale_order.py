@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
-    sale_created_project_id = fields.Many2one(comodel_name="project.project", string="Uppdrag") ############ Project created by a line is set to this one
+    sale_created_project_id = fields.Many2one(comodel_name="project.project", string="Project") ############ Project created by a line is set to this one
 
     
 class SaleOrderLine(models.Model):
