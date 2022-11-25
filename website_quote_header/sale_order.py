@@ -11,8 +11,8 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
     
     website_description_footer = fields.Html('Website Description Footer', sanitize_attributes=False, translate=html_translate)
-    header_template_description = fields.Html('Website Description header', sanitize_attributes=False, translate=html_translate, default="<p></p>") ####### WHAT IM GOING TO USE TO CALL THE T RAW WITH
-    footer_template_description = fields.Html('Website Description footer', sanitize_attributes=False, translate=html_translate, default="<p></p>") ####### WHAT IM GOING TO USE TO CALL THE T RAW WITH
+    header_template_description = fields.Html('Website Description Dynamical Header', sanitize_attributes=False, translate=html_translate, default="<p></p>") ####### WHAT IM GOING TO USE TO CALL THE T RAW WITH
+    footer_template_description = fields.Html('Website Description Dynamical Footer', sanitize_attributes=False, translate=html_translate, default="<p></p>") ####### WHAT IM GOING TO USE TO CALL THE T RAW WITH
     
     @api.onchange('sale_order_template_id')
     def onchange_sale_order_template_id(self):

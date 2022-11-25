@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record id="sale_order_form_quote" model="ir.ui.view">
-    <field name="name">sale.order.form.sale_quote_header</field>
-    <field name="model">sale.order</field>
-    <field name="inherit_id" ref="sale_management.sale_order_form_quote" />
-    <field name="arch" type="xml">
-      <field name="note" position="after">
-        <field name="terms_page" />
-        <field name="website_description_footer" invisible="1" />
-      </field>
-      
-       <page name="customer_signature" position="after">
-            <page string="Extra Header Info">
-                      <field name="header_template_description"/>
-            </page>
-            <page string="Extra Footer Info">
-                      <field name="footer_template_description"/>
-            </page>
+    <record id="sale_order_form_quote" model="ir.ui.view">
+        <field name="name">sale.order.form.sale_quote_header</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_management.sale_order_form_quote" />
+        <field name="arch" type="xml">
+            <field name="note" position="after">
+                <field name="terms_page" />
+                <field name="website_description_footer" invisible="1" />
+            </field>
 
-      </page>
-    </field>
-  </record>
-  <record id="sale_order_template_view_form" model="ir.ui.view">
-    <field name="name">sale.order.template_quote_header</field>
-    <field name="model">sale.order.template</field>
-    <field name="inherit_id" ref="sale_management.sale_order_template_view_form" />
-    <field name="arch" type="xml">
-      <field name="note" position="after">
-        <field name="terms_page" />
-        <field name="website_description_footer" invisible="1" />
-      </field>
-      <page name="confirmation" position="after">
-            <page string="Extra Header Info">
-                      <field name="header_template_description" widget="html" options="{'style-inline': true}"/>
+            <page name="customer_signature" position="after">
+                <page string="Extra Header Info">
+                    <field name="header_template_description"/>
+                </page>
+                <page string="Extra Footer Info">
+                    <field name="footer_template_description"/>
+                </page>
             </page>
-            <page string="Extra Footer Info">
-                      <field name="footer_template_description" widget="html" options="{'style-inline': true}"/>
+        </field>
+    </record>
+
+    <record id="sale_order_template_view_form" model="ir.ui.view">
+        <field name="name">sale.order.template_quote_header</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form" />
+        <field name="arch" type="xml">
+            <field name="note" position="after">
+                <field name="terms_page" />
+                <field name="website_description_footer" invisible="1" />
+            </field>
+            <page name="confirmation" position="after">
+                <page string="Extra Header Info">
+                    <field name="header_template_description"/>
+                </page>
+                <page string="Extra Footer Info">
+                    <field name="footer_template_description"/>
+                </page>
+                <page string="Website Description">
+                    <field name="website_description"/>
+                </page>
             </page>
-            <page string="Website Description">
-                      <field name="website_description"/>
-            </page>
-      </page>
-    </field>
-  </record>
+        </field>
+    </record>
 </odoo>
+
