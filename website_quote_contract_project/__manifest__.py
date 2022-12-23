@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#
+#https://github.com/vertelab/odoo-website-quote
 #    Odoo SA, Open Source Management Solution, third party addon
 #    Copyright (C) 2022- Vertel AB (<https://vertel.se>).
 #
@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Website Quote:  Contract Project',
+    'name': 'Website Quote: Contract Project',
     'version': '14.0.1.0.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'A help module that adds a field on a sale order.',
