@@ -20,7 +20,7 @@
 ##############################################################################
 
 {
-    'name': 'Website Quote:  Monthly, Template',
+    'name': 'Website Quote: Monthly, Template',
     'version': '14.0.1.0.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'More features for online quotation.',
