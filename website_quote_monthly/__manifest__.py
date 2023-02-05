@@ -40,7 +40,7 @@ More features for online quotation
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_monthly',
-    'images': ['static/description/banner.png'], # 560x280 px.
+    'images': ['static/description/banner.png'],  # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
@@ -51,6 +51,7 @@ More features for online quotation
     'data': [
         'data/data.xml',
         'views/template.xml',
+        # 'views/sale_order_view.xml',
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

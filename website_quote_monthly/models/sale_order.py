@@ -25,18 +25,19 @@ import werkzeug
 from odoo.exceptions import except_orm, Warning, RedirectWarning
 
 import logging
+
 _logger = logging.getLogger(__name__)
 
+
 class SaleOrder(models.Model):
-    _inherit='sale.order'
-    
+    _inherit = 'sale.order'
+
     @api.depends('order_line.price_total')
     def _compute_amount_month(self):
         month = self.env.ref('website_quote_monthly.product_uom_month')
         for order in self:
-            order.order_line_month_ids = order.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id == month)
-            order.order_line_fixed_ids = order.order_line.filtered(lambda x: x.product_id and x.product_id.uom_id != month)
-            amount_untaxed = amount_untaxed_fixed = amount_untaxed_month = amount_tax = amount_tax_month = amount_tax_fixed = 0.0 
+            amount_untaxed = amount_untaxed_fixed = amount_untaxed_month = amount_tax = \
+                amount_tax_month = amount_tax_fixed = 0.0
             for line in order.order_line:
                 if line.product_id and line.product_id.uom_id == month:
                     amount_untaxed_month += line.price_subtotal
@@ -45,19 +46,53 @@ class SaleOrder(models.Model):
                     amount_untaxed_fixed += line.price_subtotal
                     amount_tax_fixed += line.price_tax
             order.update({
-                'amount_tax_fixed':amount_tax_fixed,
+                'amount_tax_fixed': amount_tax_fixed,
                 'amount_month_total': amount_untaxed_month,
                 'amount_fixed_total': amount_untaxed_fixed,
                 'amount_month_total_tax': amount_untaxed_month + amount_tax_month,
                 'amount_fixed_total_tax': amount_untaxed_fixed + amount_tax_fixed,
-                'amount_tax_month':amount_tax_month
+                'amount_tax_month': amount_tax_month
             })
+
     amount_tax_fixed = fields.Monetary(compute='_compute_amount_month')
     amount_tax_month = fields.Monetary(compute='_compute_amount_month')
     amount_month_total = fields.Float(compute='_compute_amount_month')
     amount_month_total_tax = fields.Float(compute='_compute_amount_month')
     amount_fixed_total = fields.Float(compute='_compute_amount_month')
     amount_fixed_total_tax = fields.Float(compute='_compute_amount_month')
-    
-    order_line_month_ids = fields.One2many('sale.order.line', compute='_compute_amount_month')
-    order_line_fixed_ids = fields.One2many('sale.order.line', compute='_compute_amount_month')
+
+    def _find_order_line_sequence(self, sequence):
+        return self.order_line.filtered(lambda line: line.sequence == sequence and line.display_type == 'line_section')
+
+    @api.depends('order_line')
+    def _month_uom_order_lines_ids(self):
+        month = self.env.ref('website_quote_monthly.product_uom_month')
+        for order in self:
+            line_ids = self.env['sale.order.line']
+
+            for order_line in order.order_line:
+                if not order_line.display_type and order_line.product_id.uom_id == month:
+                    line_ids += order_line
+                    if self._find_order_line_sequence(order_line.sequence - 1):
+                        line_ids += self._find_order_line_sequence(order_line.sequence - 1)
+
+            order.order_line_month_ids = line_ids.sorted(key=lambda line: line.sequence)
+
+    @api.depends('order_line')
+    def _fixed_uom_order_lines_ids(self):
+        month = self.env.ref('website_quote_monthly.product_uom_month')
+        for order in self:
+            line_ids = self.env['sale.order.line']
+
+            for order_line in order.order_line:
+                if not order_line.display_type and order_line.product_id.uom_id != month:
+                    line_ids += order_line
+                    if self._find_order_line_sequence(order_line.sequence - 1):
+                        line_ids += self._find_order_line_sequence(order_line.sequence - 1)
+
+            order.order_line_fixed_ids = line_ids.sorted(key=lambda line: line.sequence)
+
+    order_line_month_ids = fields.One2many('sale.order.line', compute='_month_uom_order_lines_ids')
+    order_line_fixed_ids = fields.One2many('sale.order.line', compute='_fixed_uom_order_lines_ids')
+
+
