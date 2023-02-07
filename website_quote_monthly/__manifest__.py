@@ -21,7 +21,7 @@
 
 {
     'name': 'Website Quote: Monthly, Template',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.1.0',
     # Version ledger: 14.0 = Odoo version. 1 = Major. Non regressionable code. 2 = Minor. New features that are regressionable. 3 = Bug fixes
     'summary': 'More features for online quotation.',
     # Categories can be used to filter modules in modules listing
@@ -36,6 +36,14 @@ More features for online quotation
 * Product detail description for quotation
 * New unit of measure month
 * Additional table for monthly cost products
+
+*14.0.1.1.0
+========================
+- Split the order line for customer preview, so that the customer sees products with the
+  UOM "month"
+- Also ensured that the notes and sections are visible where applicable. 
+NoTE: For the notes and sections to show well, you need to add the word "Monthly:"
+      to the beginning of any section or note that is added to the line e.g Monthly: Subscriptions
     """,
     #'sequence': '1',
     'author': 'Vertel AB',
