@@ -60,6 +60,7 @@
                         <t t-foreach="sale_order.order_line_fixed_ids" t-as="line">
                             <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded" />
                             <!-- <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included" /> -->
+
                             <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
                                 <t t-if="not line.display_type">
                                     <td>
@@ -158,6 +159,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="monthly-costs" style="page-break-inside: auto;" class="mt32" t-if="sale_order.amount_month_total">
                 <t t-set="display_remove" t-value="sale_order.state in ('draft', 'sent') and any(line.sale_order_option_ids for line in sale_order.order_line)"/>
 
@@ -325,6 +327,20 @@
                                     </div>
                                 </strong>
                             </td>
+                               <td>
+                                <strong class="text-right">
+                                    <div t-esc="option.price_unit*option.quantity" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' t-att-style="option.discount and 'text-decoration: line-through' or None" t-att-class="option.discount and 'text-danger' or None" />
+                                    <div t-if="option.discount">
+                                        <t t-esc="(1-option.discount / 100.0) * option.price_unit" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                    </div>
+                                </strong>
+                            </td>
+                               <td>
+                                <strong class="text-right">
+                                    <div t-field="option.uom_id" />
+                                </strong>
+                            </td>
+                            
                             <td class="text-center" t-if="sale_order.state in ['draft', 'sent'] and report_type == 'html'">
                                 <a t-att-data-option-id="option.id" href="#" class="mb8 js_add_optional_products d-print-none" aria-label="Add to cart" title="Add to cart">
                                     <span class="fa fa-shopping-cart"/>
