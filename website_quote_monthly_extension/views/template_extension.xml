@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="monthly_quote_extension" name="monthly_quote_extension" inherit_id="website_quote_monthly.monthly_quote">
+        <xpath expr="//h4[hasclass('mb-0')]" position="replace">
+            <h4 t-if="sale_order.sale_company_type == 'person'">
+                Fixed Costs
+                <b t-raw="d" data-id="amount_fixed_total"/>
+                <b t-raw="sale_currency" data-id="sale_currency_id1"/>
+            </h4>
+            <h4 t-elif="sale_order.sale_company_type == 'company'">
+                Fixed Costs
+                <b t-field="sale_order.amount_total" data-id="total_amount"/>
+            </h4>
+        </xpath>
+    </template>
+</odoo>
