@@ -33,8 +33,8 @@ More features for online quotation
     """,
     #'sequence': '1',
     'author': 'Vertel AB',
-    # ~ 'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_monthly',
-    # ~ 'images': ['static/description/banner.png'],  # 560x280 px.
+    'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_monthly_extension',
+    'images': ['static/description/banner.png'],  # 560x280 px.
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
