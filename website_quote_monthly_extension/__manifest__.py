@@ -29,7 +29,7 @@
     # for the full list
     'category': 'Sales',
     'description': """
-More features for online quotation
+More features for online quotation.
     """,
     #'sequence': '1',
     'author': 'Vertel AB',
@@ -38,7 +38,7 @@ More features for online quotation
     'license': 'AGPL-3',
     'contributor': '',
     'maintainer': 'Vertel AB',
-    # ~ 'repository': 'https://github.com/vertelab/odoo-website-quote',
+    'repository': 'https://github.com/vertelab/odoo-website-quote',
     # Any module necessary for this one to work correctly
 
     'depends': ['website_quote_monthly'],
