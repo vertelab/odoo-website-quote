@@ -121,20 +121,20 @@
                         <!-- Should be replaced in master by t-call="sale.sale_order_portal_content_totals_table" -->
                         <table class="table table-sm">
                             <!-- <tr class="border-black" style="border-bottom:1px solid #dddddd;"> <td> <strong>Subtotal</strong> </td> <td class="text-right"> <span data-id="total_untaxed" t-field="sale_order.amount_month_total" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}' /> </td> </tr> -->
-                            <t t-foreach="sale_order.amount_by_group" t-as="amount_by_group">
+                            <t t-foreach="sale_order.tax_totals" t-as="tax_total">
                                 <tr style="border-bottom:1px solid #dddddd;">
-                                    <t t-if="amount_by_group[3] == 1 and sale_order.amount_fixed_total == amount_by_group[2]">
+                                    <t t-if="tax_total[3] == 1 and sale_order.amount_fixed_total == tax_total[2]">
                                         <td>
-                                            <span t-esc="amount_by_group[0]" />
+                                            <span t-esc="tax_total[0]" />
                                             <span>
                                                 &amp;nbsp;
                                                 <span>on</span>
                                                 &amp;nbsp;
-                                                <t t-esc="amount_by_group[2]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                                <t t-esc="tax_total[2]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <span t-esc="amount_by_group[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                            <span t-esc="tax_total[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                         </td>
                                     </t>
                                     <t t-else ="">
@@ -249,20 +249,20 @@
                         <!-- Should be replaced in master by t-call="sale.sale_order_portal_content_totals_table" -->
                         <table class="table table-sm">
                             <!-- <tr class="border-black" style="border-bottom:1px solid #dddddd;"> <td><strong>Subtotal</strong></td> <td class="text-right"> <span data-id="total_untaxed" t-field="sale_order.amount_month_total" t-options='{"widget": "monetary","display_currency": sale_order.pricelist_id.currency_id}' /> </td> </tr> -->
-                            <t t-foreach="sale_order.amount_by_group" t-as="amount_by_group">
+                            <t t-foreach="sale_order.tax_totals" t-as="tax_total">
                                 <tr style="border-bottom:1px solid #dddddd;">
-                                    <t t-if="amount_by_group[3] == 1 and sale_order.amount_month_total == amount_by_group[2]">
+                                    <t t-if="tax_total[3] == 1 and sale_order.amount_month_total == tax_total[2]">
                                         <td>
-                                            <span t-esc="amount_by_group[0]" />
+                                            <span t-esc="tax_total[0]" />
                                             <span>
                                                 &amp;nbsp;
                                                 <span>on</span>
                                                 &amp;nbsp;
-                                                <t t-esc="amount_by_group[2]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                                <t t-esc="tax_total[2]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <span t-esc="amount_by_group[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
+                                            <span t-esc="tax_total[1]" t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}' />
                                         </td>
                                     </t>
                                     <t t-else ="">
