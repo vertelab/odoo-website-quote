@@ -42,6 +42,7 @@
      #},
     'data': [
         'views/views.xml'
+        'views/test.xml'
     ],
     'demo': [],
     'application': False,
