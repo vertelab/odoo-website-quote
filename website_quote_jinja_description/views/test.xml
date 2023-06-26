@@ -26,6 +26,8 @@
                         </p>
                     </group>
                 </xpath>
+            </field>
+        </record>
     </data>
 
 </odoo>
