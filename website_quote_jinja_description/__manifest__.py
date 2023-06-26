@@ -41,7 +41,7 @@
      #   "python": ["acme_tiny", "IPy",],
      #},
     'data': [
-        'views/views.xml'
+        'views/views.xml',
         'views/test.xml'
     ],
     'demo': [],
