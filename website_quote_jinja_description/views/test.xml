@@ -25,6 +25,7 @@
                             you would use ${object.contract_id.name}.
                         </p>
                     </group>
+                </xpath>
     </data>
 
 </odoo>
