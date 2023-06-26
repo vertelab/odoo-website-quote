@@ -40,10 +40,13 @@
     'repository': 'https://github.com/vertelab/odoo-website-quote',
     # Any module necessary for this one to work correctly
 
-    'depends': ['website_quote_monthly'],
+    'depends': ['website_quote_monthly','sale','contract','product_contract'],
     'data': [
         'views/uom_uom.xml',
+        'views/uom_category_add_monthly_bool.xml',
         'data/data.xml',
+        'views/sale_orders_settings.xml',
+        'views/contract_extra_invoice_fields.xml',
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

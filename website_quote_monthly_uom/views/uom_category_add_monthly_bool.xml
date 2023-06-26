@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="uom_category_add_bool" model="ir.ui.view">
+            <field name="name">uom.category.add.monthly.bool</field>
+            <field name="model">uom.category</field>
+            <field name="inherit_id" ref="uom.product_uom_categ_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="monthly_bool" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
