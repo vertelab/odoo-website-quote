@@ -22,10 +22,16 @@ class ContractContract(models.Model):
     def _prepare_recurring_invoices_values(self, date_ref=False):
         invoices_values = super()._prepare_recurring_invoices_values(date_ref)
         invoices_values_json=""
+        
+        
+        _logger.error(invoices_values)
+        
         try:
 
             invoices_values_json = json.dumps(invoices_values, cls=DateEncoder)
+        
         except TypeError:
+            
             raise UserError('At least one of the values in the form can not be parsed with '\
                             'json.stringify check "website_quote_jinja_description" for more')
 
@@ -36,10 +42,16 @@ class ContractContract(models.Model):
             self.contract_line_fixed_ids.ids
             )
         
-        invoices_values_json = invoices_values_json[self.contract_line_fixed_ids.id]
+        _logger.error(invoices_values_json[self.contract_line_fixed_ids.ids[0]])
+        _logger.error(invoices_values_json[self.contract_line_fixed_ids.ids[1]])
+        
+        invoices_values_json = invoices_values_json[self.contract_line_fixed_ids.ids[0]]
+        
 
-        invoices_values = json.loads(invoices_values_json, 
-            object_hook=DateEncoder.date_decoder)        
+        invoices_values = json.loads(
+            invoices_values_json, 
+            object_hook=DateEncoder.date_decoder
+            )        
         
         return invoices_values
 
