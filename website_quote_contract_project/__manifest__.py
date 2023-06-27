@@ -45,8 +45,6 @@
     'depends': ['sale','sale_quotation_builder','website_quote_header'],
     'data': [
         'views/sale_order_views.xml',
-        'views/sale_order_bool_setting_views.xml'
-    
         ],
 }
 
