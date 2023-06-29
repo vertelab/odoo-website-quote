@@ -7,3 +7,10 @@ class UoM_add_field(models.Model):
 
     monthly_bool = fields.Boolean("Exist inside monthly sums")
     
+    def _action_confirm(self):
+    
+        res = super(UoM_add_field,self)._action_confirm()
+
+        return res
+    
+    

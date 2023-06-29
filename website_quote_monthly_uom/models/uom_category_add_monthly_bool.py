@@ -7,3 +7,10 @@ class ProductCategoryBool(models.Model):
 
     monthly_bool = fields.Boolean("Exist inside monthly sums")
     
+    def create_contracts(self, order):
+    
+        res = super(ProductCategoryBool,self).create_contracts(order)
+
+        return res
+    
+    

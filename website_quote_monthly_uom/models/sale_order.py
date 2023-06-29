@@ -31,3 +31,8 @@ class SaleOrder(models.Model):
                 'amount_fixed_total_tax': amount_untaxed_fixed + amount_tax_fixed,
                 'amount_tax_month':amount_tax_month
             })
+            
+            
+            
+            
+            
