@@ -40,7 +40,7 @@
     'repository': 'https://github.com/vertelab/odoo-website-quote',
     # Any module necessary for this one to work correctly
 
-    'depends': ['website_quote_monthly','sale','contract','product_contract'],
+    'depends': ['website_quote_monthly','sale','contract','product_contract','website_quote_contract_project'],
     'data': [
         'views/uom_uom.xml',
         'views/uom_category_add_monthly_bool.xml',
