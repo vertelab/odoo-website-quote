@@ -48,6 +48,7 @@
         'views/sale_orders_settings.xml',
         'views/contract_extra_invoice_fields.xml',
         'views/sale_order_bool_setting_views.xml',
+        'views/temp_name_test.xml',
     ],
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
