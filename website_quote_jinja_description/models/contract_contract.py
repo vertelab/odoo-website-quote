@@ -19,12 +19,13 @@ class ContractContract(models.Model):
     so that we can use jinja when you create an invoice from a contract
     """
     
+    
     def _prepare_recurring_invoices_values(self, date_ref=False):
         invoices_values = super()._prepare_recurring_invoices_values(date_ref)
+
         invoices_values_json=""
         
         
-        _logger.error(invoices_values)
         
         try:
 
@@ -59,22 +60,25 @@ class ContractContract(models.Model):
         This makes Jinja return multiples of the same string, for every id, we only need one of them. 
         That is the reason that we put "0" bellow.
         """
-        invoices_values_json = invoices_values_json[self.contract_line_fixed_ids.ids[0]]
-        
+        try:
 
-        invoices_values = json.loads(
+            invoices_values_json = invoices_values_json[self.contract_line_fixed_ids.ids[0]]  
+
+            invoices_values = json.loads(
             invoices_values_json, 
             object_hook=DateEncoder.date_decoder
-            )        
+            )     
         
-        return invoices_values
+        except:
 
-"""
-JSON stringify does not work on the original date format, 
-so we convert it to a date format that works for json stringify, 
-and then convers it back
-"""
+            _logger.error("invoice values was empty")
+        
+
+           
+        return invoices_values
+    
 class DateEncoder(json.JSONEncoder):
+
 
     def default(self, obj):
         if isinstance(obj, date):
@@ -89,3 +93,12 @@ class DateEncoder(json.JSONEncoder):
                 dct[key] = datetime.datetime.strptime(date_string, "%Y-%m-%d").date()
 
         return dct
+    
+    
+
+"""
+JSON stringify does not work on the original date format, 
+so we convert it to a date format that works for json stringify, 
+and then convers it back
+"""
+
