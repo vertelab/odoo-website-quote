@@ -4,4 +4,4 @@ from . import uom_category_add_monthly_bool
 from . import sale_orders_settings
 from . import contract_extra_invoice_fields
 from . import sale_order_bool_setting
-from . import temp_name_test
+from . import uom_category_boolean
