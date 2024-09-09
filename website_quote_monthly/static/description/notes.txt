@@ -1,16 +1,14 @@
 odoo-website-quote / website_quote_monthly
-2023-06-20
+2024-09-09
 
 Be aware of these!
 [project]/[module]/static/description/banner.png
 [project]/[module]/static/description/icon.png
 
 
-Icon: "Right quote icon"
-Source:
-https://icons-for-free.com/right+quote-1324438811576802808/
+Icon: "quote left"
+https://fontawesome.com/v4/icon/quote-left
 
-Icons may be found at: https://fontawesome.com/v5/cheatsheet
 
 
 Odoo banner: 560 x 280
@@ -52,7 +50,11 @@ ls | wc -l
 grep -sR "'website':" */*__.py | tr "'" " "
 
 Find the latest project to copy / paste:
-grep -r "2023-06-*" odoo-*/*/static/description/notes.txt
-grep -r "2023-*" */static/description/notes.txt
+grep -r "2024-09-*" odoo-*/*/static/description/notes.txt
+grep -r "2024-*" */static/description/notes.txt
+
+Unexpected errors sometimes occurs, then set the correct permissions!
+sudo chmod 664 /usr/share/*/*/static/description/banner.png
+sudo chmod 664 /usr/share/*/*/static/description/icon.png
 
 
