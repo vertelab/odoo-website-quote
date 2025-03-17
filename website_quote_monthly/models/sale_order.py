@@ -22,7 +22,7 @@ from odoo import models, fields, api, _
 from odoo import http
 from odoo.http import request
 import werkzeug
-from odoo.exceptions import except_orm, Warning, RedirectWarning
+from odoo.exceptions import  UserError
 
 import logging
 
@@ -56,10 +56,10 @@ class SaleOrder(models.Model):
 
     amount_tax_fixed = fields.Monetary(compute='_compute_amount_month')
     amount_tax_month = fields.Monetary(compute='_compute_amount_month')
-    amount_month_total = fields.Float(compute='_compute_amount_month')
-    amount_month_total_tax = fields.Float(compute='_compute_amount_month')
-    amount_fixed_total = fields.Float(compute='_compute_amount_month')
-    amount_fixed_total_tax = fields.Float(compute='_compute_amount_month')
+    amount_month_total = fields.Monetary(compute='_compute_amount_month')
+    amount_month_total_tax = fields.Monetary(compute='_compute_amount_month')
+    amount_fixed_total = fields.Monetary(compute='_compute_amount_month')
+    amount_fixed_total_tax = fields.Monetary(compute='_compute_amount_month')
 
     def _find_order_line_sequence(self, sequence):
         return self.order_line.filtered(lambda line: line.sequence == sequence and line.display_type == 'line_section')
@@ -96,4 +96,60 @@ class SaleOrder(models.Model):
 
     order_line_month_ids = fields.One2many('sale.order.line', compute='_month_uom_order_lines_ids')
     order_line_fixed_ids = fields.One2many('sale.order.line', compute='_fixed_uom_order_lines_ids')
+
+    monthly_tax_totals = fields.Binary(compute='_compute_monthly_tax_totals', exportable=False)
+    fixed_tax_totals = fields.Binary(compute='_compute_fixed_tax_totals', exportable=False)
+
+    @api.depends_context('lang')
+    @api.depends('order_line.price_subtotal', 'currency_id', 'company_id')
+    def _compute_monthly_tax_totals(self):
+        AccountTax = self.env['account.tax']
+        for order in self:
+            order_lines = order.order_line_month_ids.filtered(lambda x: not x.display_type)
+            base_lines = [line._prepare_base_line_for_taxes_computation() for line in order_lines]
+            AccountTax._add_tax_details_in_base_lines(base_lines, order.company_id)
+            AccountTax._round_base_lines_tax_details(base_lines, order.company_id)
+            order.monthly_tax_totals = AccountTax._get_tax_totals_summary(
+                base_lines=base_lines,
+                currency=order.currency_id or order.company_id.currency_id,
+                company=order.company_id,
+            )
+
+    @api.depends_context('lang')
+    @api.depends('order_line.price_subtotal', 'currency_id', 'company_id')
+    def _compute_fixed_tax_totals(self):
+        AccountTax = self.env['account.tax']
+        for order in self:
+            order_lines = order.order_line_fixed_ids.filtered(lambda x: not x.display_type)
+            base_lines = [line._prepare_base_line_for_taxes_computation() for line in order_lines]
+            AccountTax._add_tax_details_in_base_lines(base_lines, order.company_id)
+            AccountTax._round_base_lines_tax_details(base_lines, order.company_id)
+            order.fixed_tax_totals = AccountTax._get_tax_totals_summary(
+                base_lines=base_lines,
+                currency=order.currency_id or order.company_id.currency_id,
+                company=order.company_id,
+            )
+
+    def _get_fixed_order_lines_to_report(self):
+        month = self.env.ref('website_quote_monthly.product_uom_month')
+        down_payment_lines = self.order_line.filtered(lambda line:
+            line.is_downpayment
+            and not line.display_type
+            and not line._get_downpayment_state()
+        )
+
+        def show_line(line):
+            if not line.is_downpayment:
+                return True
+            elif line.display_type and down_payment_lines:
+                return True  # Only show the down payment section if down payments were posted
+            elif line in down_payment_lines:
+                return True  # Only show posted down payments
+            else:
+                return False
+
+        return self.order_line.filtered(
+            lambda fixed_line: (not fixed_line.display_type and fixed_line.product_id.uom_id != month)
+                               or (fixed_line.display_type and not fixed_line.name.startswith('Monthly:'))
+            ).filtered(show_line)
 
