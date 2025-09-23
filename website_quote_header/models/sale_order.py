@@ -1,6 +1,4 @@
 import logging
-from markupsafe import Markup
-import markdown
 from lxml import etree
 
 from odoo import api, fields, models, _
