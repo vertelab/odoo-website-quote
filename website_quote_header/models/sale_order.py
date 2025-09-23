@@ -45,6 +45,8 @@ class SaleOrder(models.Model):
                     raise UserError(_(f"Got this error while trying to parse the sale order template for the header: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
                 except QWebException as e:
                     raise UserError(_(f"Got this error while trying to render the sale order template for the header with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
+                except Exception as e:
+                    raise UserError(_(f"Got this error while trying to render the sale order template for the header with Qweb: {e}"))
                 record.header_template_description_rendered = header_template_description_rendered    
 
             if record.website_description_footer:
@@ -54,6 +56,8 @@ class SaleOrder(models.Model):
                     raise UserError(_(f"Got this error while trying to parse the sale order template for the website description: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
                 except QWebException as e:
                     raise UserError(_(f"Got this error while trying to render the sale order template for the website description with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
+                except Exception as e:
+                    raise UserError(_(f"Got this error while trying to render the sale order template for the website description with Qweb: {e}"))
                 record.website_description_footer_rendered = website_description_footer_rendered
                 
             if record.footer_template_description:
@@ -63,6 +67,8 @@ class SaleOrder(models.Model):
                     raise UserError(_(f"Got this error while trying to parse the sale order template for the footer: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
                 except QWebException as e:
                     raise UserError(_(f"Got this error while trying to render the sale order template for the footer with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
+                except Exception as e:
+                    raise UserError(_(f"Got this error while trying to render the sale order template for the footer with Qweb: {e}"))
                 record.footer_template_description_rendered = footer_template_description_rendered
 
     
