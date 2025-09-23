@@ -21,7 +21,7 @@
 
 {
     'name': 'Website Quote: Header',
-    'version': '18.0.0.0.0',
+    'version': '1.0',
     'summary': 'Fixed header styles in quote.',
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -40,9 +40,7 @@
     'repository': 'https://github.com/vertelab/odoo-website-quote',
     'depends': ['sale', 'sale_pdf_quote_builder'],
     'data': [
-        # 'views/assets.xml',
         'views/sale_order_views.xml',
         'views/templates.xml',
     ],
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
