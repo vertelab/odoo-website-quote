@@ -39,45 +39,33 @@ class SaleOrder(models.Model):
     def compute_template_description_rendered(self):
         for record in self:
             if record.header_template_description:
-                try:
-                    header_template_description_rendered = self.template_description_rendererer(record,record.header_template_description)
-                except etree.XMLSyntaxError as e:
-                    raise UserError(_(f"Got this error while trying to parse the sale order template for the header: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
-                except QWebException as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the header with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
-                except Exception as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the header with Qweb: {e}"))
-                record.header_template_description_rendered = header_template_description_rendered    
+                record.header_template_description_rendered = self.template_description_rendererer(record,record.header_template_description,"header")
+            else:
+                record.header_template_description_rendered = "<p></p>"
 
             if record.website_description_footer:
-                try:
-                    website_description_footer_rendered = self.template_description_rendererer(record,record.website_description_footer)
-                except etree.XMLSyntaxError as e:
-                    raise UserError(_(f"Got this error while trying to parse the sale order template for the website description: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
-                except QWebException as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the website description with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
-                except Exception as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the website description with Qweb: {e}"))
-                record.website_description_footer_rendered = website_description_footer_rendered
+                record.website_description_footer_rendered = self.template_description_rendererer(record,record.website_description_footer,"website description")
+            else:
+                record.website_description_footer_rendered = "<p></p>"
                 
             if record.footer_template_description:
-                try:
-                    footer_template_description_rendered = self.template_description_rendererer(record,record.footer_template_description)
-                except etree.XMLSyntaxError as e:
-                    raise UserError(_(f"Got this error while trying to parse the sale order template for the footer: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}."))
-                except QWebException as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the footer with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}."))
-                except Exception as e:
-                    raise UserError(_(f"Got this error while trying to render the sale order template for the footer with Qweb: {e}"))
-                record.footer_template_description_rendered = footer_template_description_rendered
-
+                record.footer_template_description_rendered = self.template_description_rendererer(record,record.footer_template_description,"footer")
+            else:
+                record.footer_template_description_rendered = "<p></p>"
     
-    def template_description_rendererer(self,record,template):
+    def template_description_rendererer(self,record,template,template_type):
         values = {'sale_order':record}
-        renderd_template = "<p></p>"
         template = template.replace("<br>","<br/>")
-        parsed_template = etree.fromstring(template)
-        _logger.error(f"{parsed_template=}")
-        renderd_template = self.env["ir.qweb"]._render(parsed_template,values)
-        _logger.error(f"{renderd_template=}")
+        try:
+            parsed_template = etree.fromstring(template)
+            renderd_template = self.env["ir.qweb"]._render(parsed_template,values)
+        except etree.XMLSyntaxError as e:
+            _logger.error(f"Got this error while trying to parse the sale order template for the {template_type}: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}.")
+            renderd_template = f"<p>Got this error while trying to parse the sale order template for the {template_type}: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}.</p>"
+        except QWebException as e:
+            _logger.error(f"Got this error while trying to render the sale order template for the {template_type} with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}.")
+            renderd_template = f"<p>Got this error while trying to render the sale order template for the {template_type} with Qweb: {e}. A field is most likely missing in order for the Qweb rendering to work for the template {record.sale_order_template_id.name}.</p>"
+        except Exception as e:
+            _logger.error(f"Got this unknow error while trying to render the sale order template for the {template_type} with Qweb: {e}")
+            renderd_template = f"<p>Got this unknow error while trying to render the sale order template for the {template_type} with Qweb: {e}</p>"
         return renderd_template
