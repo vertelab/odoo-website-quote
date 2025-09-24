@@ -54,10 +54,8 @@ class SaleOrder(models.Model):
     def template_description_rendererer(self,record,template,template_type):
         values = {'sale_order':record}
         template = str(template).replace("<br>","<br/>")
-        _logger.error(f"{template=}")
         try:
             parsed_template = etree.fromstring(template)
-            _logger.error(f"{parsed_template=}")
             renderd_template = self.env["ir.qweb"]._render(parsed_template,values)
         except etree.XMLSyntaxError as e:
             _logger.error(f"Got this error while trying to parse the sale order template for the {template_type}: {e}. The qweb/html is probably malformed for the template {record.sale_order_template_id.name}.")
