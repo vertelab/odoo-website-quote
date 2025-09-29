@@ -17,9 +17,9 @@ class SaleOrder(models.Model):
         'Website Description', sanitize_attributes=False, translate=html_translate, default="<p></p>")
     footer_template_description = fields.Html(
         'Website Description Footer', sanitize_attributes=False, translate=html_translate, default="<p></p>")   
-    header_template_description_rendered = fields.Html('Website Description Dynamical Header', sanitize_attributes=False, compute="compute_template_description_rendered", store=True)
-    website_description_footer_rendered = fields.Html('Website Description Dynamical', sanitize_attributes=False, compute="compute_template_description_rendered", store=True)   
-    footer_template_description_rendered = fields.Html('Website Description Dynamical Footer', sanitize_attributes=False, compute="compute_template_description_rendered", store=True)   
+    header_template_description_rendered = fields.Html('Website Description Dynamical Header', sanitize_attributes=False, compute="compute_template_description_rendered")
+    website_description_footer_rendered = fields.Html('Website Description Dynamical', sanitize_attributes=False, compute="compute_template_description_rendered")   
+    footer_template_description_rendered = fields.Html('Website Description Dynamical Footer', sanitize_attributes=False, compute="compute_template_description_rendered")   
     terms_page = fields.Char('Terms Page')
 
     @api.onchange('sale_order_template_id')
@@ -33,7 +33,7 @@ class SaleOrder(models.Model):
             self.footer_template_description = template.footer_template_description
         return ret
         
-    @api.depends("header_template_description","footer_template_description")
+    # @api.depends("header_template_description","footer_template_description")
     def compute_template_description_rendered(self):
         for record in self:
             if record.header_template_description:
