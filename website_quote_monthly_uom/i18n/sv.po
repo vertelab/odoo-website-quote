@@ -1,0 +1,91 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_quote_monthly_uom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-29 08:51+0000\n"
+"PO-Revision-Date: 2025-09-29 10:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_quote_monthly_uom
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly_uom.res_config_settings_view_form
+msgid "Automatic creation of contracts from sale orders"
+msgstr "Automatisk skapande av kontrakt från försäljningsordrar"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model,name:website_quote_monthly_uom.model_res_config_settings
+msgid "Config Settings"
+msgstr "Inställningar"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model,name:website_quote_monthly_uom.model_contract_contract
+msgid "Contract"
+msgstr "Kontrakt"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_contract_contract__client_order_ref
+msgid "Customer Reference"
+msgstr "Kundreferens"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_uom_category__monthly_bool
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_uom_category__sale_order_bool
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_uom_uom__monthly_bool
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly_uom.uom_add_bool_categ
+msgid "Exist inside monthly sums"
+msgstr "Finns inom månatliga belopp"
+
+#. module: website_quote_monthly_uom
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly_uom.sale_order_settings
+msgid "Extensions"
+msgstr "Tillägg"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model.fields,help:website_quote_monthly_uom.field_sale_order__pricelist_id
+msgid "If you change the pricelist, only newly added lines will be affected."
+msgstr "Om du ändrar prislistan kommer endast nyligen tillagda rader att påverkas."
+
+#. module: website_quote_monthly_uom
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_sale_order__pricelist_id
+msgid "Pricelist"
+msgstr "Prislista"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model,name:website_quote_monthly_uom.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Produktens måttenhet"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model,name:website_quote_monthly_uom.model_uom_category
+msgid "Product UoM Categories"
+msgstr "Produktenhetskategorier"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model.fields,field_description:website_quote_monthly_uom.field_res_config_settings__sale_order_bool
+msgid "Sale order bool test"
+msgstr "Booltest för försäljningsorder"
+
+#. module: website_quote_monthly_uom
+#: model:ir.model,name:website_quote_monthly_uom.model_sale_order
+msgid "Sales Order"
+msgstr "Order"
+
+#. module: website_quote_monthly_uom
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly_uom.res_config_settings_view_form
+msgid "Will activate the automatic creation of contracts from a sale order"
+msgstr "Aktiverar automatiskt skapande av kontrakt från en försäljningsorder"
+
+#. module: website_quote_monthly_uom
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly_uom.uom_add_bool_categ
+msgid "Will summarize all the contracts to one invoice"
+msgstr "Sammanfattar alla kontrakt till en faktura"
