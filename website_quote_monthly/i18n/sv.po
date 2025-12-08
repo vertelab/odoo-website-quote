@@ -4,13 +4,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20250925\n"
+"Project-Id-Version: Odoo Server 18.0-20251205\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-29 09:05+0000\n"
-"PO-Revision-Date: 2025-09-29 11:12+0200\n"
+"POT-Creation-Date: 2025-12-08 12:45+0000\n"
+"PO-Revision-Date: 2025-12-08 14:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: sv_SE\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,7 @@ msgstr "<span>Belopp</span>"
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
 msgid "<span>Disc.%</span>"
-msgstr "<span>Disc.%</span>"
+msgstr "<span>Rabatt %</span>"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
@@ -109,12 +109,12 @@ msgstr "Månadsvis:"
 #. module: website_quote_monthly
 #: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_fixed_ids
 msgid "Order Line Fixed"
-msgstr "Orderrad Fast"
+msgstr "Orderrad fast"
 
 #. module: website_quote_monthly
 #: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_month_ids
 msgid "Order Line Month"
-msgstr "Orderrad Månad"
+msgstr "Orderrad månad"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
