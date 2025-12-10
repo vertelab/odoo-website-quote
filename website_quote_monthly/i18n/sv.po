@@ -74,12 +74,12 @@ msgstr "Belopp skatt månad"
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
 msgid "Fixed Costs"
-msgstr "Fast kostnad"
+msgstr "Kostnad"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
 msgid "Fixed Costs:"
-msgstr "Fasta kostnader:"
+msgstr "Kostnader:"
 
 #. module: website_quote_monthly
 #: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__fixed_tax_totals
@@ -94,7 +94,7 @@ msgstr "Månad"
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
 msgid "Monthly Costs"
-msgstr "Månatliga kostnader"
+msgstr "Månadskostnad"
 
 #. module: website_quote_monthly
 #: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__monthly_tax_totals
@@ -136,7 +136,7 @@ msgstr "Försäljningsorder"
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
 msgid "TO BE REMOVED"
-msgstr "SKA AVLÄGSNAS"
+msgstr "ATT TAS BORT"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
