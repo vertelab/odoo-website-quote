@@ -42,7 +42,7 @@
     'repository': 'https://github.com/vertelab/odoo-website-quote',
     # Any module necessary for this one to work correctly
 
-    'depends': ['sale','website_quote_header'],
+    'depends': ['sale','website_quote_header','sale_management'],
     'data': [
         'views/sale_order_views.xml',
         ],
