@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_quote_header
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20251205\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-08 12:45+0000\n"
+"PO-Revision-Date: 2025-12-08 14:11+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_portal_content
+msgid ""
+"<strong>Template Footer:</strong> this content will appear on all "
+"quotations using this template."
+msgstr ""
+"<strong>Mallfot:</strong> detta innehåll kommer att visas på alla offerter "
+"som använder denna mall."
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_portal_content
+msgid ""
+"<strong>Template Header:</strong> this content will appear on all "
+"quotations using this template."
+msgstr ""
+"<strong>Mallrubrik:</strong> detta innehåll kommer att visas på alla "
+"offerter som använder denna mall."
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_form_quote
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_template_view_form
+msgid "Extra Footer Info"
+msgstr "Extra information om sidfoten"
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_form_quote
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_template_view_form
+msgid "Extra Header Info"
+msgstr "Extra information om sidhuvudet"
+
+#. module: website_quote_header
+#: model:ir.model,name:website_quote_header.model_sale_order_template
+msgid "Quotation Template"
+msgstr "Offertmall"
+
+#. module: website_quote_header
+#: model:ir.model,name:website_quote_header.model_sale_order
+msgid "Sales Order"
+msgstr "Försäljningsorder"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__terms_page
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order_template__terms_page
+msgid "Terms Page"
+msgstr "Villkorssida"
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_portal_content
+msgid ""
+"Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to "
+"generate the table of content automatically."
+msgstr ""
+"Titlar med stil <i>Heading 1</i> och <i>Heading 2</i> kommer att användas "
+"för att generera innehållsförteckningen automatiskt."
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__website_description_footer
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_template_view_form
+msgid "Website Description"
+msgstr "Webbplatsbeskrivning"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__website_description_footer_rendered
+msgid "Website Description Dynamical"
+msgstr "Beskrivning av webbplatsen Dynamisk"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__footer_template_description_rendered
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order_template__footer_template_description
+msgid "Website Description Dynamical Footer"
+msgstr "Beskrivning av webbplatsen Dynamisk sidfot"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__header_template_description_rendered
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order_template__header_template_description
+msgid "Website Description Dynamical Header"
+msgstr "Beskrivning av webbplatsen Dynamiskt sidhuvud"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__footer_template_description
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order_template__website_description_footer
+msgid "Website Description Footer"
+msgstr "Sidfot för webbplatsbeskrivning"
+
+#. module: website_quote_header
+#: model:ir.model.fields,field_description:website_quote_header.field_sale_order__header_template_description
+msgid "Website Description Header"
+msgstr "Rubrik för webbplatsbeskrivning"
+
+#. module: website_quote_header
+#: model_terms:ir.ui.view,arch_db:website_quote_header.sale_order_form_quote
+msgid "Website Description Info"
+msgstr "Beskrivning av webbplatsen Info"

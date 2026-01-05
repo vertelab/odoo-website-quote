@@ -2,6 +2,7 @@
 <odoo>
 
     <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content" priority="17">
+
         <xpath expr="//div[@id='content']/div[@id='informations']/div[@id='customer_info']" position="after">
             <div class="alert alert-info alert-dismissable css_non_editable_mode_hidden o_not_editable" t-ignore="True" role="status">
                 <p>
@@ -12,7 +13,8 @@
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-            <div itemprop="header_template_description" t-field="sale_order.header_template_description"/>
+            <div itemprop="header_template_description_rendered" t-field="sale_order.header_template_description_rendered"/>
+            <div itemprop="website_description_footer_rendered" t-field="sale_order.website_description_footer_rendered"/>
         </xpath>
 
         <xpath expr="//div[@id='content']/section[@id='details']" position="after">
@@ -25,7 +27,7 @@
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-            <div itemprop="footer_template_description" t-field="sale_order.footer_template_description"/>
+            <div itemprop="footer_template_description_rendered" t-field="sale_order.footer_template_description_rendered"/>
         </xpath>
     </template>
 

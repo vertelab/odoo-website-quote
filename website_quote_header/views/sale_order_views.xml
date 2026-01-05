@@ -12,10 +12,13 @@
 
             <page name="customer_signature" position="after">
                 <page string="Extra Header Info">
-                    <field name="header_template_description"/>
+                    <field name="header_template_description" options="{'codeview': True}"/>
                 </page>
                 <page string="Extra Footer Info">
-                    <field name="footer_template_description"/>
+                    <field name="footer_template_description" options="{'codeview': True}"/>
+                </page>
+                <page string="Website Description Info">
+                    <field name="website_description_footer" options="{'codeview': True}"/>
                 </page>
             </page>
         </field>
@@ -32,14 +35,14 @@
             </field>
             <page name="optional_products" position="after">
                 <page string="Extra Header Info">
-                    <field name="header_template_description"/>
+                    <field name="header_template_description" options="{'codeview': True}"/>
                 </page>
                 <page string="Extra Footer Info">
-                    <field name="footer_template_description"/>
+                    <field name="footer_template_description" options="{'codeview': True}"/>
                 </page>
-<!--                <page string="Website Description">-->
-<!--                    <field name="website_description"/>-->
-<!--                </page>-->
+               <page string="Website Description">
+                   <field name="website_description_footer"  options="{'codeview': True}"/>
+               </page>
             </page>
         </field>
     </record>

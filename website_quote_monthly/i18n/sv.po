@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_quote_monthly
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20251205\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-08 12:45+0000\n"
+"PO-Revision-Date: 2025-12-08 14:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "<span>Amount</span>"
+msgstr "<span>Belopp</span>"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "<span>Disc.%</span>"
+msgstr "<span>Rabatt %</span>"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "<span>Taxes</span>"
+msgstr "<span>Skatter</span>"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Delsumma</strong>"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_fixed_total
+msgid "Amount Fixed Total"
+msgstr "Belopp Fast Totalt"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_fixed_total_tax
+msgid "Amount Fixed Total Tax"
+msgstr "Belopp Fast Total skatt"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_month_total
+msgid "Amount Month Total"
+msgstr "Belopp Månad Totalt"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_month_total_tax
+msgid "Amount Month Total Tax"
+msgstr "Belopp Månad Total skatt"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_tax_fixed
+msgid "Amount Tax Fixed"
+msgstr "Belopp Fast skatt"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__amount_tax_month
+msgid "Amount Tax Month"
+msgstr "Belopp skatt månad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Fixed Costs"
+msgstr "Kostnad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "Fixed Costs:"
+msgstr "Kostnader:"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__fixed_tax_totals
+msgid "Fixed Tax Totals"
+msgstr "Fast skatt Totalt"
+
+#. module: website_quote_monthly
+#: model:uom.uom,name:website_quote_monthly.product_uom_month
+msgid "Month"
+msgstr "Månad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "Monthly Costs"
+msgstr "Månadskostnad"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__monthly_tax_totals
+msgid "Monthly Tax Totals"
+msgstr "Månatliga skattesummor"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "Monthly:"
+msgstr "Månadsvis:"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_fixed_ids
+msgid "Order Line Fixed"
+msgstr "Orderrad fast"
+
+#. module: website_quote_monthly
+#: model:ir.model.fields,field_description:website_quote_monthly.field_sale_order__order_line_month_ids
+msgid "Order Line Month"
+msgstr "Orderrad månad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "Products"
+msgstr "Produkter"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "Quantity"
+msgstr "Kvantitet"
+
+#. module: website_quote_monthly
+#: model:ir.model,name:website_quote_monthly.model_sale_order
+msgid "Sales Order"
+msgstr "Försäljningsorder"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+msgid "TO BE REMOVED"
+msgstr "ATT TAS BORT"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
+msgid "Unit Price"
+msgstr "Enhetspris"
