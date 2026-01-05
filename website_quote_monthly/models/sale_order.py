@@ -74,9 +74,6 @@ class SaleOrder(models.Model):
                 if (not order_line.display_type and order_line.product_id.uom_id == month) or \
                         (order_line.display_type and order_line.name.startswith('Monthly:')):
                     line_ids += order_line
-                    # if self._find_order_line_sequence(order_line.sequence - 1):
-                    #     line_ids += self._find_order_line_sequence(order_line.sequence - 1)
-
             order.order_line_month_ids = line_ids.sorted(key=lambda line: line.sequence)
 
     @api.depends('order_line')
@@ -89,9 +86,6 @@ class SaleOrder(models.Model):
                 if (not order_line.display_type and order_line.product_id.uom_id != month) or \
                         (order_line.display_type and not order_line.name.startswith('Monthly:')):
                     line_ids += order_line
-                    # if self._find_order_line_sequence(order_line.sequence - 1):
-                    #     line_ids += self._find_order_line_sequence(order_line.sequence - 1)
-
             order.order_line_fixed_ids = line_ids.sorted(key=lambda line: line.sequence)
 
     order_line_month_ids = fields.One2many('sale.order.line', compute='_month_uom_order_lines_ids')
