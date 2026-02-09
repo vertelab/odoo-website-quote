@@ -13,21 +13,22 @@
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-            <div itemprop="header_template_description_rendered" t-field="sale_order.header_template_description_rendered"/>
-            <div itemprop="website_description_footer_rendered" t-field="sale_order.website_description_footer_rendered"/>
+
+            <div id="header_template_description" t-field="sale_order.header_template_description" class="oe_structure" />
+            <div id="website_description_footer" t-field="sale_order.website_description_footer" class="oe_structure" />
         </xpath>
 
         <xpath expr="//div[@id='content']/section[@id='details']" position="after">
             <div class="alert alert-info alert-dismissable css_non_editable_mode_hidden o_not_editable" t-ignore="True" role="status">
                 <p>
-                    <strong>Template Footer:</strong> this content will appear on all quotations using this template.
+                    <strong>Template Footers:</strong> this content will appear on all quotations using this template.
                 </p>
 
                 <p class="text-muted">
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-            <div itemprop="footer_template_description_rendered" t-field="sale_order.footer_template_description_rendered"/>
+            <div id="sale_template_website_description_footer" t-field="sale_order.sale_order_template_id.website_description_footer" class="oe_structure" />
         </xpath>
     </template>
 
