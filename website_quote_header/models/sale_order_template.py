@@ -1,5 +1,3 @@
-
-
 from odoo import api, fields, models
 from odoo.tools.translate import html_translate
 

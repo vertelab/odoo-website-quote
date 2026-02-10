@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content" priority="17">
-
         <xpath expr="//div[@id='content']/div[@id='informations']/div[@id='customer_info']" position="after">
             <div class="alert alert-info alert-dismissable css_non_editable_mode_hidden o_not_editable" t-ignore="True" role="status">
                 <p>
@@ -37,9 +35,7 @@
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-
         </xpath>
     </template>
-
 </odoo>
 

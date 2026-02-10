@@ -4,7 +4,6 @@ from lxml import etree
 from odoo import api, fields, models, _
 from odoo.tools.translate import html_translate
 from odoo.addons.base.models.ir_qweb import QWebException
-from odoo.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
