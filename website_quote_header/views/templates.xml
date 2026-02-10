@@ -14,8 +14,17 @@
                 </p>
             </div>
 
-            <div id="header_template_description" t-field="sale_order.header_template_description" class="oe_structure" />
-            <div id="website_description_footer" t-field="sale_order.website_description_footer" class="oe_structure" />
+            <div id="header_template_description"
+                 t-raw="sale_order.render_template_field(sale_order.header_template_description, 'header')"
+                 class="oe_structure" />
+
+            <div id="website_description"
+                 t-field="sale_order.website_description"
+                 class="oe_structure" />
+
+            <div id="footer_template_description"
+                 t-raw="sale_order.render_template_field(sale_order.footer_template_description, 'footer')"
+                 class="oe_structure" />
         </xpath>
 
         <xpath expr="//div[@id='content']/section[@id='details']" position="after">
@@ -28,7 +37,7 @@
                     Titles with style <i>Heading 1</i> and <i>Heading 2</i> will be used to generate the table of content automatically.
                 </p>
             </div>
-            <div id="sale_template_website_description_footer" t-field="sale_order.sale_order_template_id.website_description_footer" class="oe_structure" />
+
         </xpath>
     </template>
 

@@ -5,11 +5,6 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale_management.sale_order_form_quote" />
         <field name="arch" type="xml">
-            <field name="note" position="after">
-                <field name="terms_page" />
-                <field name="website_description_footer" invisible="1" />
-            </field>
-
             <page name="customer_signature" position="after">
                 <page string="Extra Header Info">
                     <field name="header_template_description" options="{'codeview': True}"/>
@@ -18,7 +13,7 @@
                     <field name="footer_template_description" options="{'codeview': True}"/>
                 </page>
                 <page string="Website Description Info">
-                    <field name="website_description_footer" options="{'codeview': True}"/>
+                    <field name="website_description" options="{'codeview': True}"/>
                 </page>
             </page>
         </field>
@@ -29,10 +24,7 @@
         <field name="model">sale.order.template</field>
         <field name="inherit_id" ref="sale_management.sale_order_template_view_form" />
         <field name="arch" type="xml">
-            <field name="note" position="after">
-                <field name="terms_page" />
-                <field name="website_description_footer" invisible="1" />
-            </field>
+
             <page name="optional_products" position="after">
                 <page string="Extra Header Info">
                     <field name="header_template_description" options="{'codeview': True}"/>
@@ -41,7 +33,7 @@
                     <field name="footer_template_description" options="{'codeview': True}"/>
                 </page>
                <page string="Website Description">
-                   <field name="website_description_footer"  options="{'codeview': True}"/>
+                   <field name="website_description"  options="{'codeview': True}"/>
                </page>
             </page>
         </field>
