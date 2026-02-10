@@ -380,7 +380,7 @@
     </template>
 
     <template id="quotations" name="quotes" inherit_id="sale.sale_order_portal_content" priority="15">
-        <xpath expr="//section[@id='details']" position="attributes"> <attribute name="style">display: none;</attribute> </xpath>
+<!--        <xpath expr="//section[@id='details']" position="attributes"> <attribute name="style">display: none;</attribute> </xpath>-->
         
         <xpath expr="//section[@id='details']" position="after">
             <t t-set="fixed_payment_lines" t-value="sale_order.order_line_fixed_ids"/>
