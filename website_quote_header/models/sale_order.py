@@ -16,10 +16,6 @@ class SaleOrder(models.Model):
     footer_template_description = fields.Html(
         'Website Description Footer', sanitize_attributes=False, translate=html_translate, default="<p></p>")
 
-    website_description = fields.Html(
-        'Website Description', sanitize_attributes=False, translate=html_translate, default="<p></p>")
-
-
     @api.onchange('sale_order_template_id')
     def _onchange_sale_order_template_id(self):
         ret = super(SaleOrder, self)._onchange_sale_order_template_id()

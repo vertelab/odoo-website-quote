@@ -38,7 +38,7 @@
     'contributor': '',
     'maintainer': 'Vertel AB',
     'repository': 'https://github.com/vertelab/odoo-website-quote',
-    'depends': ['sale', 'sale_pdf_quote_builder'],
+    'depends': ['sale', 'sale_quotation_builder'],
     'data': [
         'views/sale_order_views.xml',
         'views/templates.xml',

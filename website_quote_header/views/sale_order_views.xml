@@ -12,9 +12,6 @@
                 <page string="Extra Footer Info">
                     <field name="footer_template_description" options="{'codeview': True}"/>
                 </page>
-                <page string="Website Description Info">
-                    <field name="website_description" options="{'codeview': True}"/>
-                </page>
             </page>
         </field>
     </record>
@@ -32,9 +29,6 @@
                 <page string="Extra Footer Info">
                     <field name="footer_template_description" options="{'codeview': True}"/>
                 </page>
-               <page string="Website Description">
-                   <field name="website_description"  options="{'codeview': True}"/>
-               </page>
             </page>
         </field>
     </record>
