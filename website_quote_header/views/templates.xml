@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content" priority="17">
+    <template id="website_quote_header_sale_order_portal_content" inherit_id="sale.sale_order_portal_content" priority="17">
         <xpath expr="//div[@id='content']/div[@id='informations']/div[@id='customer_info']" position="after">
             <div class="alert alert-info alert-dismissable css_non_editable_mode_hidden o_not_editable" t-ignore="True" role="status">
                 <p>

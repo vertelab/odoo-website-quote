@@ -396,9 +396,9 @@
             </t>
         </xpath>
 
-<!--        <xpath expr="//section[@id='details']" position="attributes">-->
-<!--            <attribute name="style">display: none !important</attribute>-->
-<!--        </xpath>-->
+        <xpath expr="//section[@id='details']" position="attributes">
+            <attribute name="style">display: none !important</attribute>
+        </xpath>
     </template>
     
 
