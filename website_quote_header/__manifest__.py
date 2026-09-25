@@ -21,15 +21,23 @@
 
 {
     'name': 'Website Quote: Header',
-    'version': '1.0',
+    'version': '18.0.1.0.0',
     'summary': 'Fixed header styles in quote.',
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Sales',
-    'description': """
-        Fixed header styles in quote.
-    """,
+    'description': '''
+Header
+======
+
+    Fixed header styles in quote.
+
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on sale.order, sale.order.template.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_header',

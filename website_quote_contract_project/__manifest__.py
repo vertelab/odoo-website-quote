@@ -28,10 +28,18 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Sales',
-    'description': """
+    'description': '''
+Contract Project
+================
+
     A help module that adds a field on a sale order that is the created 
-    project from a sale order, which is used by a specific sale order template.    
-    """,
+        project from a sale order, which is used by a specific sale order template.
+
+    Features:
+
+        - UI Integration: Extends 1 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on project.project, sale.order, sale.order.line.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_contract_project',

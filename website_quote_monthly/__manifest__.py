@@ -28,19 +28,17 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Sales',
-    'description': """
-More features for online quotation
-==================================
+    'description': '''
+Monthly, Template
+=================
 
-* Product image in pricing
-* Product detail description for quotation
-* New unit of measure month
-* Additional table for monthly cost products
+    More features for online quotation.
 
-*18.0.0.0.0
-========================
-- Ported to 18.0
-    """,
+    Features:
+
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on sale.order.
+    ''',
     #'sequence': '1',
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-website-quote/website_quote_monthly',
