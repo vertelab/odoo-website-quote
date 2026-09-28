@@ -120,14 +120,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:end;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="519.41309"
+       x="518.0"
        y="90.822594"
        id="text2035"
        inkscape:export-filename="/usr/share/odoo-website-quote/website_quote_monthly/static/description/banner.png"
        inkscape:export-xdpi="92.61972"
        inkscape:export-ydpi="92.61972"><tspan
          sodipodi:role="line"
-         x="519.41309"
+         x="518.0"
          y="90.822594"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:end;writing-mode:lr-tb;text-anchor:end;stroke-width:1px"
          id="tspan8888">Website Quote Monthly</tspan></text>
@@ -163,39 +163,5 @@
          id="tspan12380"
          x="227.0979"
          y="254.66064" /></text>
-    <image
-       width="31.380898"
-       height="26.359955"
-       preserveAspectRatio="none"
-       style="stroke-width:1.59332;image-rendering:optimizeQuality"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAqCAYAAADxughHAAAABHNCSVQICAgIfAhkiAAABTpJREFU
-aIHtWUuIHEUY/v5+1ExP9+zMPmZ3Zye4u0YkqOAriGAuPg4qZEEiRFCDRD1FET2JIiL4AI8iGMFc
-FI0ikvhAESQHI4IkiArxsEFjBDcz6dmeZ09vP6raw2biZHd6d56yh/0uTVd9//fVR09PVXURekQ8
-Hp8MggBhGIKIIISwhBBBr3rtIMsyk2U5zTkHAEiSJHzfL7bjUqeiuq5fk0gk9qXT6b1BEMzHYrEZ
-z/NWRVaD/HT+/Pm7hRB2P4NPpVJ7DMPYl0gk7uKc5xRFGQ+CoBlM1Ov1ty9cuPBM10ESicQt6XT6
-RU3THgjDcEO+bdtPFAqFI90OnojkZDK5d2xs7GVJkm7cZFyhaZpX12q1v1oblSi2JEnxubm5d4jo
-0TAM5TAMNx2QYRgzhUKh0/EDAGKx2GwmkznMGLu3wxIaGRmZ6SiIqqq5ubm57zjnuzoJ0CsMw7gz
-l8t94fu+0a/WuiCMsVw2mz3BOb+2X/GNYBjGPZlM5rjv+/og9K4IIstyYseOHV8C6CmE4zjLnfA0
-TduVzWY/55wnerAJG43GOh+p9WZqauoNADf3IA4Af5um+elmJCJSp6enj/YYAkEQfFUqlRbXtl9+
-IiMjI7t1XX+q+Z+9AS4GQXDMcZyTtVrtHABIkgTO+e++75c3K85ms88S0U2b8WRZXqzVah97nvdz
-o9EwAUBVVV6v108DWPfiXg6STqef55xLawlNEBEcx3mrUCi8wDnvaa5gjCUTicRzQoiNAjQsyzpk
-Wdb7YRheQVxZWYmsUwAgFovNKIqyEEUiopBz/tLS0tJr3Q//PySTyQUhxFRUvyzLdrlcXlheXj7R
-rbYCAKlU6kEAahTJcZx3+w0BAIZh7I/qI6LQNM3HyuVy1yGASy+7qqp7ogiyLDdKpdIrvYivhaqq
-d0T1EdGpSqXyWa/aEgBomnZrFKHRaBx3HCffq0ETuq7vFEKMRvVblnU47GP2lSRJUjjnkTOr53m/
-9Cq+BilssIbq10fSNC1tGMZkFMEw+l49AAAmJiY2nGT79ZEAYKMnOsy11iB9IueNJjjn1/fl0CGE
-EDf0U79pEFVVHx4fHz/Yj0knSCaTb+q6vrvX+sj9SCsnlUodSaVSr3qed7EdgYjAGLOr1erX1Wr1
-Pdd1u9uUrGJ6amrqlBDibBAEjSgfRVHy1Wr1k3K5/BHn3L3cp+v6xPz8vNlotK3tGkR0sVKpHCgW
-i9+2ts/Ozj4ky/LRgZgACMPwdLFY3F+r1f4EOvhp9WAwaRjGB/F4fOegtVtBRLtHR0c/JCIZGEIQ
-AJAkKTM5Ofn6MLRboSjK7RMTE48DQwoCAIyx+4al3c5naEGEEMbo6OhVw9JvIp1OXwcMMQgREWMs
-OSz9JmKx2AgwxCD/N7aDbDVsB9lq2A6y1bAdZKuhGWQY+9mQ6IpvDcPaM4cAINm2XbRte2nQ6kTE
-8/n8meZ9oVD4bdAerboSAHied3LQBp7n/dB677ruIoC+v4+18TkJADIABEFwNplMHkRnW99OwJeX
-l5/0PO9cS1soSdJKPB6/f0AeAFDM5/OPhGHoNoMUhBCLmqYtEFG/YXi5XH66UqmsOytxHOc0Y2yM
-MXYbujhRbmvCuWma5oLrun8Al54IALiuewbA96qq5hhjOSGEgtUXiVquUQgVRfF93/+xWq0esiwr
-cm9u2/Y3qqr+o6rqLGNs8tIRQ0ceRESKotRXVlaOWZZ1wLbtX5udbQtjsViKcx7v5qOZoiie67ql
-jgsAxOPxjO/7HU8BRAQiqvu+v+585l/Z/xiO8H/2HAAAAABJRU5ErkJggg==
-"
-       id="image117"
-       x="298.51328"
-       y="130.56305" />
   </g>
 </svg>
