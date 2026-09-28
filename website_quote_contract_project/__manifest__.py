@@ -55,5 +55,3 @@ Contract Project
         'views/sale_order_views.xml',
         ],
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
