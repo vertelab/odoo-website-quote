@@ -36,6 +36,16 @@ msgid "<span>Taxes</span>"
 msgstr "<span>Skatter</span>"
 
 #. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "<span>Fixed Costs</span>:"
+msgstr "<span>Fast kostnad</span>:"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "<span>Monthly</span>:"
+msgstr "<span>Månadsvis</span>:"
+
+#. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.fixed_cost_details
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_cost_details
 msgid "<strong class=\"mr16\">Subtotal</strong>"
