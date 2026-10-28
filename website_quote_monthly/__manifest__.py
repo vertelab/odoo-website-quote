@@ -49,7 +49,7 @@ Monthly, Template
     'repository': 'https://github.com/vertelab/odoo-website-quote',
     # Any module necessary for this one to work correctly
     'depends': [
-        'sale_pdf_quote_builder',
+        'sale_quotation_builder',
         'sale_management',
     ],
     'data': [
