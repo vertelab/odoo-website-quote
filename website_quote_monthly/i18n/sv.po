@@ -73,8 +73,9 @@ msgstr "Belopp skatt månad"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
 msgid "Fixed Costs"
-msgstr "Kostnad"
+msgstr "Fast kostnad"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
@@ -90,6 +91,11 @@ msgstr "Fast skatt Totalt"
 #: model:uom.uom,name:website_quote_monthly.product_uom_month
 msgid "Month"
 msgstr "Månad"
+
+#. module: website_quote_monthly
+#: model_terms:ir.ui.view,arch_db:website_quote_monthly.monthly_quote
+msgid "Monthly"
+msgstr "Månadsvis"
 
 #. module: website_quote_monthly
 #: model_terms:ir.ui.view,arch_db:website_quote_monthly.quotations

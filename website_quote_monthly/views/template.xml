@@ -31,11 +31,11 @@
                 <h4 class="mb-0" t-if="sale_order.amount_month_total">
 <!--                    Monthly: <b t-field="sale_order.amount_month_total_tax" data-id="amount_month_total_tax" />-->
 
-                    Fixed Costs (ex-VAT): <b t-field="sale_order.amount_fixed_total" data-id="amount_fixed_total"/>
+                    <span>Fixed Costs</span>: <b t-field="sale_order.amount_fixed_total" data-id="amount_fixed_total"/>
 
                 </h4>
                 <h4 class="mb-0" t-if="sale_order.amount_month_total">
-                    Monthly (ex-VAT): <b t-field="sale_order.amount_month_total" data-id="amount_month_total" />
+                    <span>Monthly</span>: <b t-field="sale_order.amount_month_total" data-id="amount_month_total" />
                 </h4>
             </t>
         </xpath>

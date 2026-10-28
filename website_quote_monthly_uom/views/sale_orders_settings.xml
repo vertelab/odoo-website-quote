@@ -6,13 +6,24 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
-                    <xpath expr="//field[@name='fiscal_position_id']" position="attributes">
-                        <attribute name="options">{'no_create': False}</attribute>
-                    </xpath>
+                <xpath expr="//page[@name='order_lines']" position="after">
+                    <page string="Extensions" name="extensions">
+                        <group name="main">
+                            <group>
+                                <field name="pricelist_id"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Missiv" name="missiv">
+                        <group name="main">
+                            <field name="website_description"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='fiscal_position_id']" position="attributes">
+                    <attribute name="options">{'no_create': False}</attribute>
+                </xpath>
             </field>
         </record>
     </data>
 </odoo>
-
-
-
